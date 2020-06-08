@@ -1,0 +1,217 @@
+//-section Principal section
+.principalSection
+	background:
+		image: url(../img/medicos.png) 
+		size: cover
+	.logoCarso
+		width: 200px
+		height: 50px
+		display: block
+		+mediaMax780
+			margin: auto
+
+	.container
+		+bx
+		padding: 40px 15px
+
+	.login,
+	.dataEmployee,
+	.dataRecorder
+		&.card
+			max-width: 500px
+			margin: auto
+		.h1
+			font-weight: 600
+		+mediaMax640
+			margin-top: 50px!important
+
+
+	.dataEmployee
+		margin-top: 40px
+		.btn
+			margin: 30px  0
+
+	.returnLogin
+		margin: 10px 0
+		text-align: center
+		cursor: pointer
+		span
+			color:  $colorBlue
+			text-decoration: underline
+
+	.login
+		.small
+			.colorBlue
+				text-decoration: underline
+				display: inline-block
+				cursor: pointer
+
+	.dataRecorder
+		+flex
+		+flexDir(column)
+		margin-top: 40px
+		.card
+			+flex
+			+alignItem(center)
+			margin: 15px  0
+			padding-right: 50px
+			position: relative
+		a
+			+aReset
+		p
+			max-width: 300px
+
+		.ico
+			margin-right: 20px
+
+		.icoNext
+			width: 20px
+			height: 35px
+			position: absolute
+			right: 20px
+			top: calc(50% - 17px)
+
+
+	.centralContent
+		.text
+			+bx
+			color: white
+			padding: 30px 30px 30px 0
+			+mediaMax780
+				padding: 10px 0
+			+mediaMax640
+				display: none
+			.h1
+				font-size: 75px
+				padding: 70px 20px 25px 15px
+				font-weight: 600
+				+mediaMax960
+					font-size: 65px
+					padding: 70px 15px 15px
+				+mediaMax780
+					font-size: 30px
+					padding: 10px 15px 5px
+
+			.h2
+				font-size: 30px
+				padding: 20px
+				font-weight: 400
+				line-height: 1.2
+				max-width: 600px
+				+mediaMax960
+					font-size: 28px
+				+mediaMax780
+					font-size: 20px
+		.col
+			+mediaMax780
+				width: 100%
+
+
+.homeSymptomSection
+	+bx
+	padding: 70px 0 20px
+
+	ul
+		+bx
+		+flex
+		+flexDir(row)
+		+flexWrap(wrap)
+		padding: 50px 0 0
+	li
+		+bx
+		width: 50%
+		padding: 10px 0
+		&:before
+			content: $bullet
+			margin-right: 10px
+
+
+
+.homeRegistrySection
+	+bx
+	padding: 50px 0
+	+mediaMax780
+		padding: 20px 0
+	.h4
+		text-align: center
+		margin-bottom: 20px
+	.btn
+		max-width: 400px
+		margin: auto
+
+
+.homePreventionSection
+	+bx
+	padding: 20px 0 70px
+	+mediaMax960
+		padding: 20px 0 40px
+	+mediaMax780
+		padding: 20px 0 40px
+
+	ul
+		li
+			padding: 30px 20px
+			background: $colorWhite
+			margin-bottom: 20px
+			line-height: 1.3
+
+
+	.washHandsContent
+		+bx
+		padding: 10px 0 40px
+		margin-bottom: 20px
+		width: 100%
+		border-bottom: 1px solid $colorDarkGray
+		.container
+			+flex
+			+flexDir(row)
+			+alignItem(center)
+
+	.h3
+		margin-bottom: -35px
+		+mediaMax780
+			margin-bottom: 0
+
+	.icoWashHands
+		width: 100px
+		height: 100px
+		margin-left: 50px
+
+
+.urlLinks
+	+flex
+	+flexDir(row)
+	+flexWrap(wrap)
+	+alignItem(center)
+	+justifyCont(space-around)
+	a
+		max-width: 220px
+
+//-section  homeMessageAdvice
+.homeMessageAdvice
+	+bx
+	padding: 70px 0
+	+mediaMax960
+		padding: 40px 15px
+	+mediaMax780
+		padding: 40px 15px
+	.h1
+		text-align: center
+		font-size: 35px
+		color: $colorDarkGray
+		font-weight: 300
+		margin: auto
+		max-width: 850px
+		line-height: 1.3
+		+mediaMax960
+			font-size: 25px
+		+mediaMax780
+			font-size: 20px
+	.privacity
+		+bx
+		display: inline-block
+		font-size: 20px
+		padding: 20px 0 0
+		text-align: center
+		color: $colorBlue
+		width: 100%

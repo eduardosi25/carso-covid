@@ -1,0 +1,82 @@
+[data-vendor="Apple Computer, Inc."]
+	.downloadAndroid
+		display: none
+	@media only screen and (min-width: 800px)
+		.downloadAPP
+			display: none
+			.downloadAndroid
+				display: none
+
+.downloadAPP
+	+bx
+	+grad(90deg, $colorBlue, $colorLightBlue)
+	padding: 15px
+	min-height: 90px
+	display: block
+	position: relative
+	box-shadow: 0 -1px 7px #000
+
+	p
+		margin-right: 40px
+		color: white
+		+mediaMax960
+			margin-right: 20px
+		+mediaMax780
+			margin-right: 0
+			margin-bottom: 10px
+
+	.container
+		+flex
+		+flexDir(row)
+		+alignItem(center)
+		+justifyCont(center)
+		+mediaMax780
+			+flexDir(column)
+			+justifyCont(flex-start)
+
+
+	.btt.downloadA
+		+bx
+		padding: 20px
+		color: $colorBlue
+		border: 1px solid $colorBlue
+		border-radius: 5px
+		text-align: center
+		background: white
+		margin-right: 40px
+		font-size: 15px
+		cursor: pointer
+		+mediaMax960
+			margin-right: 20px
+		+mediaMax780
+			margin-right: 0
+			margin-bottom: 10px
+
+	.contbtnApp
+		+flex
+		+flexDir(row)
+		+mediaMax960
+			+flexDir(column)
+		+mediaMax780
+			+flexDir(row)
+
+
+	.downloadAndroid,
+	.downloadIos
+		width: 135px
+		height: 41px
+		cursor: pointer
+		margin: 0 10px
+		+mediaMax960
+			margin: 5px 0
+		+mediaMax780
+			margin: 0 5px
+
+	.cerrarBtn
+		width: 20px
+		height: 20px
+		position: absolute
+		top: 20px
+		right: 30px
+		cursor: pointer
+		z-index: 10

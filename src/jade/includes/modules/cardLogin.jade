@@ -1,0 +1,19 @@
+.card.login
+
+	h2.h1 Iniciar sesión
+	
+	.fieldset
+		+inputField('Correo electrónico:' ,'email', 'Obligatorio', 'emailLogin')
+	
+	.fieldset
+		+inputField('Contraseña:' ,'password', 'Obligatorio', 'passwordLogin')
+	
+	.fieldset
+		button(type="button").btn.primario Ingresar
+
+	.fieldset.textCenter
+		a(href="recoveryPassword.html").colorBlue ¿Olvidaste tu contraseña?
+
+	.fieldset.textCenter
+		p.small No estas registrado, 
+			span.colorBlue ingresa aquí

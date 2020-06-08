@@ -1,0 +1,52 @@
+-var location = "monitoreoUsuario"
+-var subLoc = ""
+-var titulo = "Monitoreo Fundacion Carlos Slim / Monitoreo"
+-var descrip = ""
+-var keyword = ""
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	include includes/tagGTM
+	body
+		include includes/modules/loaderPrincipal
+		include includes/header
+		
+		main.backgroundDark
+
+			section.registryMonitoring.monitoringModule
+				.container.medium
+
+					h1.h1 Seguimiento COVID-19
+					h2.h3 MONITOREO DIARIO
+					p Es necesario registrar tu estado de salud y temperatura dos veces al día. 
+
+					.card.thanksMonitoringCaseOne.hidden
+
+						.fieldset
+							.h1  Gracias por tu tiempo
+
+						.fieldset
+							p  ¡Te esperamos todos los días a las  
+								strong 8:00  
+								| y a las 
+								strong 20:00 
+								| horas!
+						
+						.fieldset
+							p Si tienes alguna duda o requieres orientación con respecto a estas medidas, puedes comunicarte a la línea 
+								strong COVID-19 CARSO 
+							p.bigText Tel. 
+								a(href="tel:5552017694") (55) 5201-7694
+							p La cual opera las 24 horas los siete días de la semana.
+
+							p.firstRegister Es importante que guardes tu clave de seguimiento:
+								strong.idUsuario
+
+						.fieldset
+							a(href="home.html").btn.primario Regresar al inicio
+
+		include includes/scriptsCss

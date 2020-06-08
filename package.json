@@ -1,0 +1,49 @@
+{
+  "name": "covid19",
+  "version": "0.0.1",
+  "description": "Template para portal covit19",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-util": "^3.0.7",
+    "run-sequence": "^2.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-bower": "^0.0.13",
+    "gulp-bower-src": "^0.1.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-coffee": "^2.3.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-filter": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-jade-find-affected": "^0.2.2",
+    "gulp-jade": "^1.1.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-server-livereload": "^1.5.4",
+    "run-sequence": "^2.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.5",
+    "main-bower-files": "^2.13.1",
+    "pug": "^2.0.0-rc.4",
+    "gulp-util": "^3.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Braulio Martinez",
+  "license": "ISC"
+}

@@ -1,0 +1,71 @@
+//-video youtube
+mixin videoYoutube(width,height,url)
+	iframe(width="#{width}",height="#{height}",src="//www.youtube.com/embed/#{url}",frameborder="0",allowfullscreen)
+
+//- Forms
+mixin inputField(title, type, placeholder, name, value, autocomplete)
+	if(title != '')
+		.contInput
+			label(for=name) #{title}
+			input(type=type  placeholder=placeholder  name=name  id=name  value=value autocomplete=autocomplete )
+			.errorMessage 
+	else
+		.contInput
+			input(type=type  placeholder=placeholder  name=name  id=name  autocomplete=autocomplete )
+			.errorMessage
+
+mixin inputFieldNumber(title, placeholder, name)
+	if(title != '')
+		.contInput.number
+			label(for=name) #{title}
+			input(type='number'  placeholder=placeholder  name=name  id=name )
+			.errorMessage 
+	else
+		.contInput.number
+			input(type='number'  placeholder=placeholder  name=name  id=name )
+			.errorMessage 
+
+mixin inputDate(name, placeholder, dateMin)
+	.contInput.date
+		input(type='date'  placeholder=placeholder  name=name  id=name value="" min=dateMin )
+		.errorMessage 
+
+mixin checkbox(title, name, value)
+	.contCheckRadio.checkbox
+		input(type="checkbox" name=name  id=name value=value)
+		label(for=name) #{title}
+
+mixin radioButton(title, name, id, val, selected)
+	if(selected === true)
+		.contCheckRadio.radio
+			input(type="radio" name=name  id=id  value=val checked)
+			label(for=id) #{title}
+	else
+		.contCheckRadio.radio
+			input(type="radio" name=name  id=id  value=val)
+			label(for=id) #{title}
+
+mixin btnToggle(title, name, id, val, selected)
+	if(selected === true)
+		.contCheckRadio.btnToggle
+			input(type="radio" name=name  id="id" value=val checked)
+			label(for=id) #{title}
+	else
+		.contCheckRadio.btnToggle
+			input(type="radio" name=name  id="id" value=val)
+			label(for=id) #{title}
+
+mixin switchToggle(title, name, value)
+	.contCheckRadio.switchToggle
+		input(type="checkbox" name=name  id=name value=value)
+		label(for=name) #{title}
+
+mixin select(name, firstOption, arreglo)
+	.contSelect
+		.select
+			select(name=name  id=name)
+				option(value=firstOption selected disabled) #{firstOption}
+				each val in arreglo
+					option(value="#{val.key}") #{val.value}
+
+		.errorMessage

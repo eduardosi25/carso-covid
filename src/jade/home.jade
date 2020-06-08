@@ -1,0 +1,25 @@
+-var location = "homePrincipal"
+-var subLoc = ""
+-var titulo = "Monitoreo Fundacion Carlos Slim"
+-var descrip = ""
+-var keyword = ""
+include includes/mixines
+include includes/variables
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	include includes/tagGTM
+	body
+		include includes/modules/loaderPrincipal
+		
+		main
+			include includes/modules/cintilloAPP
+			include includes/modules/homePrincipalSection
+			include includes/modules/homeSymptomSection
+			//-include includes/modules/homeRegistrySection
+			include includes/modules/homePreventionSection
+			include includes/modules/homeMessageAdvice
+			
+
+		include includes/footer
+		include includes/scriptsCss

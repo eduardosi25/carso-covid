@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- nombre de proyecto y ejecución por default de ant -->
+<project name="front-covid" default="build">
+    <!-- pasos que encadenan la funcion build -->
+    <target name="build" depends="clean,prepare,npm-install,gulp"/>
+    <!-- borra directorio dist/ -->
+    <target name="clean" description="Cleanup dist/ dir">
+        <delete dir="${basedir}/dist"/>
+    </target>
+    <!-- crea directorio dist -->
+    <target name="prepare" depends="clean" description="Create empty dist/ dir">
+        <mkdir dir="${basedir}/dist"/>
+    </target>    
+    <!-- ejecuta npm con argumento build -->    
+    <target name="npm-install" description="Build with npm">
+        <exec executable="npm" failonerror="true">
+            <arg value="install"/>
+            <!--arg value="composer.phar"/>
+            <arg value="install"/>
+	        <arg value="- -prefer-dist"/>
+            <arg value="- -no-dev"/>
+            <arg value="-o"/-->
+        </exec>
+    </target>
+    <target name="gulp" description="Build with npm">
+        <exec executable="gulp" failonerror="true" />
+    </target>
+</project>

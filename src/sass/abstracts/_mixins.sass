@@ -1,0 +1,252 @@
+//- Mixines
+=svgBg($name)
+	background: url('img/#{$name}.png') transparent 0 0 no-repeat
+	background: none, url('vector/#{$name}.svg') 0 0 no-repeat
+	
+=out
+	border: 1px dotted black
+
+=bx($value: border-box)
+	box-sizing: $value
+
+=padd
+	padding: $min-spacer+3 $spacer
+
+=bgSvg($bg-url, $color)
+	background-color: $color
+	mask: url(vector/$bg-url) no-repeat
+
+=linked
+	color: $color-link
+	text-decoration: underline
+
+=sticky($import)
+	position: sticky $import
+
+
+
+=appearance
+	-webkit-appearance: none
+	appearance: none
+	&:-ms-expand
+		display: none
+
+=inputNumber
+	&::-webkit-inner-spin-button,
+	&::-webkit-outer-spin-button
+		+appearance
+		margin: 0
+
+=aReset
+	color: inherit
+	text-decoration: none
+
+=center($value: v)
+	position: absolute
+	@if $value == v
+		transform: translateX(-50%)
+		left: 50%
+	@else if $value == h
+		transform: translateY(-50%)
+		top: 50%
+	@else if $value == vh
+		transform: translate(-50%, -50%)
+		top: 50%
+		left: 50%
+
+	@else if $value == r
+		transform: translate(0%, 0%)
+		position: inherit
+		top: inherit
+		left:  inherit
+	@else if $value == rv
+		transform: translate(-50%, 0%)
+		top: inherit
+		left: 50%
+	@else if $value == rh
+		transform: translate(0%, -50%)
+		top: 50%
+		left:  inherit
+
+=translate($X,$Y)
+	transform: translate($X, $Y)
+
+=scale($value1...)
+	transform: scale($value1)
+
+=transform($values...)
+	transform: $values
+
+=filter($values...)
+	filter: $values
+
+=grad($deg, $color_A, $color_B)
+	background: $color_A
+	background: linear-gradient($deg, $color_A 0%, $color_B 100%)
+
+=gradtMask($deg, $color_A, $color_B)
+	background-image: linear-gradient($deg, $color_A 0%, $color_B 100%)
+	color: transparent
+	-webkit-background-clip: text
+	background-clip: text
+	
+=opacity($valor: 5)
+	opacity: #{"0."+$valor}
+
+//-Animacion
+=animation($values...)
+	animation:  $values
+
+=animationDelay($values...)
+	animation-delay:  $values
+
+=keyframes($name)
+	@keyframes #{$name}
+		@content
+
+=transition($values...)
+	transition:  $values
+
+=transitionDuration($values...)
+	transition-duration:  $values
+
+=transitionF($values...)
+	transition-timing-function:  $values
+
+=fx($elem:all, $time: 0.3s)
+	transition: $elem $time
+
+=fxS($values...)
+	transition: $values
+
+=fxr
+	transition: inherit
+
+=scrollMobile
+	overflow-x: hidden
+	overflow-y: scroll
+	-webkit-overflow-scrolling: touch
+
+=shadow($type: box , $s1: 2px, $s2: 2px, $s3: 10px, $alpha: rgba(0,0,0,0.5))
+	box-shadow: $s1 $s2 $s3 $alpha
+
+=bxShadow($values...)
+	box-shadow: $values
+
+=fawesome($value, $imp: '')
+	content: $value #{$imp}
+	font-family: "FontAwesome"
+
+=icoShop($value)
+	content: $value
+	font-family: "icoClaroShop"
+	
+=calc($propiedad, $exprecion)
+	#{$propiedad}: calc(#{$exprecion})
+
+=iconBg($img: icon-menu, $ancho: 40px, $alto: 40px)
+	content: " "
+	display: inline-block
+	background: url(img/#{$img}.png) no-repeat
+	background-position: 0 0
+	width: $ancho
+	height: $alto
+
+//- Bloque Experimental Flex-Box
+=flex($imp: '')
+	display: flex #{$imp}
+
+=flexReset
+	display: block
+
+=flexChild($value: auto)
+	-webkit-box-flex: 1
+	width: $value
+	flex: 1
+
+=flexDir($dir: row)
+	flex-direction: $dir
+
+=flexWrap($dir: wrap)
+	flex-wrap: $dir
+
+=flexFlow($dir: wrap)
+	flex-flow: $dir
+
+=alignItem($dir: center)
+	align-items: $dir
+
+=alignCont($dir: flex-start)
+	align-content: $dir
+
+=alignSelf($dir: center)
+	align-self: $dir
+
+=justifyCont($dir: space-between)
+	justify-content: $dir
+
+=order($dir)
+	order: $dir
+	-webkit-order: $dir
+
+=sinScroll
+	-webkit-overflow-scrolling: touch
+	&::-webkit-scrollbar
+		display: none
+
+=placeholder
+	&::-webkit-input-placeholder
+		@content
+
+=aspectRadio1X1
+	&:before
+		content: ""
+		width: 1px
+		margin-left: 1px
+		float: left
+		height: 0
+		padding-top: 400px / 400px * 100%
+	&:after
+		content: ""
+		display: table
+		clear: both
+
+=aspectRadio4X3
+	&:before
+		content: ""
+		width: 1px
+		margin-left: 1px
+		float: left
+		height: 0
+		padding-top: 480px / 640px * 100%
+	&:after
+		content: ""
+		display: table
+		clear: both
+
+=aspectRadio16X9
+	&:before
+		content: ""
+		width: 1px
+		margin-left: 1px
+		float: left
+		height: 0
+		padding-top: 1080px / 1920px * 100%
+	&:after
+		content: ""
+		display: table
+		clear: both
+
+=aspectRadioTeindas
+	position: relative
+	&:before
+		content: ""
+		width: 1px
+		margin-left: 1px
+		float: left
+		height: 0
+		padding-top: 337px / 529px * 100%
+	&:after
+		content: ""
+		display: table
+		clear: both

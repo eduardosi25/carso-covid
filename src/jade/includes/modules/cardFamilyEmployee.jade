@@ -1,0 +1,26 @@
+.form.registryFamilyModule
+	.headCard
+		.titleStep Registro para familiares de empleados de Grupo Carso
+	.card.monitoring
+		.fieldset
+			+inputField('*ID de Seguimiento de tu familiar (Empleado de Grupo Carso):' ,'text', 'Obligatorio', 'idSeguimiento')
+		.fieldset
+			+inputField('*Correo electrónico de tu familiar (Empleado de Grupo Carso):' ,'email', 'Obligatorio', 'emailFamily')
+		
+		.fieldset
+			label  *Parentesco con tu familiar (Empleado de Grupo Carso):
+			+select('familyRelationship', 'Selecciona uno' , arrayFamilyRelationship)
+
+		.fieldset
+			label  * ¿Vives en la misma casa de tu familiar (Empleado de Grupo Carso)?
+			.forTwo.w75.familiarType
+				+radioButton('Si', 'familiarReg', 'Si', '3')
+				+radioButton('No', 'familiarReg', 'No', '4')
+			.errorMessage
+
+
+	p.smallText *Campos obligatorios
+
+	.fieldset
+		button(type="button").btn.primario.familyAccess Continuar
+

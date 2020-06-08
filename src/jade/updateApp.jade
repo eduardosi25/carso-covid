@@ -1,0 +1,29 @@
+-var location = "homePrincipal"
+-var subLoc = ""
+-var titulo = "Monitoreo Fundacion Carlos Slim / Actualiza tu APP"
+-var descrip = ""
+-var keyword = ""
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	include includes/tagGTM
+	body
+		include includes/modules/loaderPrincipal
+		
+		main
+			.splashAndroid1
+				.contentLoading
+					.contAppAndroidS
+						p.h2 Descarga el app
+						img(src="img/logo-monitor.png").logoMonitor
+						p y monitorea tu salud diariamente.
+						a(href="download/monitoreoV4_0_1_dev.apk")
+							img(src="img/android.png")
+			
+
+		include includes/footer
+		include includes/scriptsCss

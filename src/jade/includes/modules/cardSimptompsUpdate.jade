@@ -1,0 +1,20 @@
+.form.FormSimptomps
+	.headCard
+		.titleStep Precedentes de salud
+	.card.monitoring
+		.fieldset.pregnantHide.hidden
+			label  *¿Estas embarazada?
+			.forTwo.w75.pregnantType
+				+radioButton('Si', 'pregnantReg', 'si', '10')
+				+radioButton('No', 'pregnantReg', 'no', 'no')
+			.errorMessage
+
+		.fieldset
+			label  *¿Tienes alguna de estas enfermedades?
+			.forTwo.arrayDiseases
+			.errorMessage
+
+	p.smallText *Campos obligatorios
+
+	.fieldset
+		button(type="button").btn.primario.middleForm Continuar

@@ -1,0 +1,117 @@
+.form.FormFirst
+	.headCard
+		.step 1
+		.titleStep Datos Personales 
+	.card.monitoring
+		.fieldset
+			+inputField('*Correo electrónico' ,'email', 'Obligatorio (Corporativo)', 'emailReg')
+		.fieldset
+			+inputField('Número de empleado' ,'text', '', 'idEmpleadoReg')
+		.fieldset
+			+inputField('*Crea una contraseña' ,'password', 'Minimo 6 caracteres', 'passwordReg')
+		.fieldset
+			+inputField('*Nombre(s)' ,'text', 'Obligatorio', 'nombreReg')
+		.fieldset
+			+inputField('*Apellido Paterno' ,'text', 'Obligatorio', 'apelldoPaternoReg')
+		.fieldset
+			+inputField('*Apellido Materno' ,'text', 'Obligatorio', 'apellidoMaternoReg')
+		.fieldset
+			+inputField('*Ingresa tu Código Postal' ,'text', 'Obligatorio', 'codigoPostalReg')
+
+		.fieldset
+			label *Fecha de nacimiento:
+			+inputDate('fechaNacimientoReg', 'DD-MM-AAAA', '1940-01-01')
+
+		.fieldset
+			label  * Sexo
+			.forTwo.w75.genereType
+				+radioButton('Femenino', 'genderReg', 'f', 'f')
+				+radioButton('Masculino', 'genderReg', 'm', 'm')
+			.errorMessage
+
+		//- .fieldset
+			label  *¿Tienes alguna de estas enfermedades?
+			.forTwo.arrayDiseases
+				+checkbox('Diabetes', 'diabetes', '1')
+				+checkbox('Hipertensión', 'hipertension', '2')
+				+checkbox('Enfermedad del corazón', 'enfermedadDelCorazon', '3')
+				+checkbox('Enfermedad pulmonar', 'enfermedadPulmonar', '4')
+				+checkbox('Enfermedad renal', 'enfermedadRenal', '5')
+				+checkbox('Ninguna', 'ninguna', '6')
+			.errorMessage
+		
+	p.smallText *Campos obligatorios
+
+	.fieldset
+		button(type="button").btn.primario.firstForm Continuar
+
+
+
+.form.FormMiddle.hidden
+	.headCard
+		.titleStep Precedentes de salud
+	.card.monitoring
+		.fieldset.pregnantHide.hidden
+			label  *¿Estas embarazada?
+			.forTwo.w75.pregnantType
+				+radioButton('Si', 'pregnantReg', 'si', '10')
+				+radioButton('No', 'pregnantReg', 'no', 'no')
+			.errorMessage
+
+		.fieldset
+			label  *¿Tienes alguna de estas enfermedades?
+			.forTwo.arrayDiseases
+			.errorMessage
+
+	p.smallText *Campos obligatorios
+
+	.fieldset
+		button(type="button").btn.primario.middleForm Continuar
+
+
+.form.FormMiddleIMC.hidden
+	.headCard
+		.titleStep Índice de Masa Corporal
+	.card.monitoring
+		.fieldset
+			+inputField('*Peso (kg)' ,'text', 'Obligatorio', 'imcPesoReg')
+		.fieldset
+			+inputField('*Estatura (cm)' ,'text', 'Obligatorio', 'imcAlturaReg')
+
+	p.smallText *Campos obligatorios
+
+	.fieldset
+		button(type="button").btn.primario.middleIMCForm Continuar
+
+
+.form.FormLast.hidden
+	.headCard
+		.step 2
+		.titleStep Datos de la empresa
+	.card.monitoring
+		//- .fieldset
+		//- 	label  *División
+		//- 	+select('selecDivicion', 'Selecciona una opción' , arrayTemp)
+
+		.fieldset
+			label  *Empresa en la que laboras:
+			+select('selecEmpresaReg', 'Selecciona una opción' , arrayBusiness)
+
+		.fieldset
+			label  *Área en la que laboras:
+			+select('selecAreaReg', 'Selecciona una opción' , arrayArea)
+		
+		.fieldset
+			+inputField('*Teléfono Celular:' ,'text', 'Obligatorio a 10 dígitos', 'telefonoCeluilarReg')
+		.fieldset
+			+inputField('*¿A quien llamar en caso de emergencia? (Familiar o cónyuge)' ,'text', 'Nombre completo de familiar o conyugue', 'nombreFamiliarReg')
+		.fieldset
+			+inputField('*Teléfono de Emergencia' ,'text', 'Obligatorio a 10 dígitos', 'telefonoEmergenciaReg')
+		//- .fieldset
+		//- 	+inputField('*Teléfono del trabajo:' ,'text', 'Opcional a 10 dígitos', 'telefonoTrabajoReg')
+
+
+	p.smallText *Campos obligatorios
+
+	.fieldset
+		button(type="button").btn.primario.lastForm Continuar

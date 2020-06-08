@@ -1,0 +1,91 @@
+.userName
+	color: $colorBlack
+	font-size: 30px
+	padding-bottom: 20px
+	overflow: hidden
+	text-transform: capitalize
+
+.userID
+	color: $colorDarkBlue
+	font-size: 20px
+	padding-bottom: 10px
+	overflow: hidden
+
+
+.countDataEmployemen
+	margin-top: 30px
+
+.myUserCards
+	+bx
+	padding: 60px 0
+	.countDataUser
+		+bx
+		background: $colorGray
+		width: 100%
+		padding: 20px
+
+	.personalData,
+	.employData
+		+flexDir(column)
+		text-align: left
+		cursor: default
+		> p
+			padding: 10px 0
+			text-align: left
+			span
+				display: inline-block
+				margin-left: 5px
+	.clinicalProfile
+		cursor: pointer
+		p
+			text-align: center
+		+mediaMax640
+			+flex
+			+flexDir(row)
+			+justifyCont(flexStart)
+			+alignItem(center)
+
+	.countCardsSections
+		+flex
+		+flexDir(row)
+		+flexWrap(wrap)
+		margin-left: -10px
+		margin-right: -10px
+		margin-top: 30px
+		.icoNext
+			display: none
+			width: 20px
+			height: 30px
+			+mediaMax640
+				display: block
+				position: absolute
+				right: 10px
+
+		.ico
+			margin: 0 auto 20px
+			max-width: 300px
+			+mediaMax640
+				margin: 5px 20px 5px -5px
+		.icoClinicalProfile
+			+mediaMax640
+				width: 30px
+				height: 40px
+				display: block
+		.card
+			margin: 10px
+			width: 100%
+			max-width: calc(33.3% - 84px)
+			border-radius: 8px
+			position: relative
+			@media only screen and (max-width: 1295px)
+				max-width: calc(50%  - 84px)
+			@media only screen and (max-width: 760px)
+				max-width: calc(100%  - 84px)
+
+		
+
+	.contButton
+		padding: 40px 0
+		.btn
+			max-width: 400px
+			margin: auto

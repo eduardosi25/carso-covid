@@ -1,0 +1,51 @@
+//- Hacks
+=chrome
+	@media screen and (-webkit-min-device-pixel-ratio:0)
+		@content
+		
+=firefox
+	@-moz-document url-prefix()
+		@content
+
+=IEEdge1314
+	@supports (-ms-ime-align: auto)
+		@content
+
+=IEEdge13
+	@supports (-ms-accelerator: true)
+		@content
+
+=IE1011
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+		@content
+
+=IE10Sup
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+		@content
+
+=safari67
+	_::-webkit-full-page-media, _:future, :root
+		@content
+
+=safari9
+	@supports (overflow:-webkit-marquee) and (justify-content:inherit)
+		@content
+		
+=safari10
+	@media not all and (min-resolution: .001dpcm)
+		@content
+
+
+
+//- Hacks mobile
+=iphone6P
+	@media screen and (min-device-width : 414px) and (max-device-width : 736px) and (-webkit-device-pixel-ratio: 3)
+		@content
+
+=iphone6
+	@media screen and (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-device-pixel-ratio: 2)
+		@content
+
+=iphone5
+	@media all and (device-width: 568px) and (device-height: 320px) and (orientation:landscape) and (-webkit-min-device-pixel-ratio: 2)
+		@content

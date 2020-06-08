@@ -1,0 +1,22 @@
+-var location = "Politicas de priacidad"
+-var subLoc = ""
+-var titulo = "Monitoreo Fundacion Carlos Slim / Políticas de Privacidad"
+-var descrip = ""
+-var keyword = ""
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	include includes/tagGTM
+	body
+		include includes/modules/loaderPrincipal
+		include includes/header
+
+		main.backgroundDark
+			include includes/modules/privacyPolicies
+
+		include includes/footer
+		include includes/scriptsCss

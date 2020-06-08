@@ -1,0 +1,25 @@
+{
+	"version": "2.0.0",
+	"name": "Monitoreo Fundacion Carlos Slim",
+	"launch_path": "/home.html",
+	"description": "Pagina para monitoreo de Grupo Carso",
+	"icons": {
+		"144": "img/icon-touch-144.png"
+	},
+	"developer": {
+		"name": "Braux Martinez",
+		"url": "https://www.fcs-monitoreo.com/"
+	},
+	"installs_allowed_from": [
+		"*"
+	],
+	"default_locale": "es",
+	"permissions": {
+	},
+	"locales": {
+		"es": {
+			"name": "Monitoreo Fundacion Carlos Slim",
+			"description": "Pagina para monitoreo de Grupo Carso"
+		}
+	}
+}

@@ -1,0 +1,95 @@
+.form.FormFirst
+	.headCard
+		.step 3
+		.titleStep Síntomas
+	.card.monitoring
+		.fieldset
+			label  *Registra tu temperatura
+			+select('selecTemp', 'Selecciona una opción' , arrayTemp)
+		
+		.fieldset
+			label  *¿Tienes dificultad para respirar ?
+			.forTwo.w50.problemsBreathe
+				+radioButton('Si', 'breatheProblem', '7', '7')
+				+radioButton('No', 'breatheProblem', '0', '8' )
+			.errorMessage
+
+		.fieldset
+			label *¿Has presentado alguno de estos síntomas en las últimas 24 horas?
+			.arraySymptoms
+				//- +checkbox('Tos', 'sintomaTos', '1')
+				//- +checkbox('Dolor de garganta', 'sintomaDolorGarganta', '2')
+				//- +checkbox('Fiebre', 'sintomaFiebre', '3')
+				//- +checkbox('Dolor de cabeza', 'sintomaDolorCabeza', '4')
+				//- +checkbox('Escalofríos y malestar general', 'sintomaEscalofrios', '5')
+				//- +checkbox('Secreción y goteo nasal', 'sintomaGoteoNasal', '6')
+				//- +checkbox('Ninguna', 'sintomaNinguna', '')
+			.errorMessage
+
+		.fieldset.firstDateSymptoms.hidden
+			label *Fecha de inicio de síntomas/temperatura
+			+inputDate('dateFirstSymptom', 'DD-MM-AAAA', '2019-01-01')
+		
+	p.smallText *Campos obligatorios
+	.fieldset
+		button(type="button").btn.primario.firstForm Continuar
+
+
+
+.form.FormLast.hidden
+	.card.monitoring
+		.fieldset
+			label *¿Estas en aislamiento/cuarentena/home office?
+			.forTwo.isolation
+				.btn.secundario Si
+				.btn.secundario No
+			.errorMessage
+
+
+		.contMonitoringIsolation.hidden
+			.fieldset
+				.forTwo.whereIsolation
+					+radioButton('En casa', 'whereIsolation', '1', '1')
+					+radioButton('En el hospital', 'whereIsolation', '2', '2')
+				.errorMessage
+
+			.fieldset
+				label  *¿Porqué?
+				+select('whyIsolation', 'Selecciona una opción' , arrayWhere)
+
+			.fieldset
+				label *Fecha de inicio de aislamiento
+				+inputDate('dateFirstIsolation', 'DD-MM-AAAA', '2019-01-01')
+
+
+
+	p.smallText *Campos obligatorios
+	.fieldset
+		button(type="button").btn.primario.lastForm Continuar
+
+
+
+
+.card.thanksMonitoringCaseOne.hidden
+
+	.fieldset
+		.h1  Gracias por tu tiempo
+
+	.fieldset
+		p  ¡Te esperamos todos los días!
+	
+	.fieldset.infoWarning
+		.icoWarning
+		p.textCenter ¡Aviso importante! 
+		p Si cambia tu temperatura durante el día vuelve a llenar el formulario de seguimiento.
+		a(href="mailto:contacto@desarrollofcs.mx" target="_blank").mailLink contacto@desarrollofcs.mx
+
+
+	.fieldset.dataPhone
+		p Si tienes alguna duda o requieres orientación comunicate a este número 
+		p.bigText Tel. 
+			a(href="tel:5552017694") (55) 5201-7694
+		p Opera las 24 horas los siete días de la semana.
+
+	.fieldset
+		.btn.primario Regresar al inicio

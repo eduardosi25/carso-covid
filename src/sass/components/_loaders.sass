@@ -1,0 +1,124 @@
+.loaderPrincipal
+	position: fixed
+	width: 100vw
+	height: 100vh
+	top: 0
+	left: 0
+	z-index: 10000
+	background: rgba($colorLigthGray,0.98)
+	.contentLoading
+		+center(vh)
+		color: $colorBlack
+		font-size: 1.5rem
+		font-weight: bold
+
+.loaderCharge
+	position: fixed
+	width: 100vw
+	height: 100vh
+	top: 0
+	left: 0
+	z-index: 10000
+	background: rgba($colorLigthGray,0.4)
+	.contentLoading
+		+center(vh)
+		.loadImage
+			display: block
+			width: 100px
+			height: 100px
+
+
+.modalView
+	position: fixed
+	width: 100vw
+	height: 100vh
+	background: rgba($colorLigthGray,0.98)
+	top: 0
+	left: 0
+	z-index: 10000
+	.contentModal
+		+center(vh)
+		position: relative
+		width: 100%
+
+	.modalClose
+		position: absolute
+		top: 5px 
+		right: 15px
+		cursor: pointer
+		font-weight: 500
+
+
+.toast
+	+bx
+	position: fixed
+	top: 20px
+	right: 20px
+	padding: 20px 30px
+	color: white
+	background: rgba(30,30,30,0.8)
+	border-radius: 10px
+	text-align: center
+	font-weight: 300
+	box-shadow: 2px 1px 8px #000
+	font-size: 15px
+	max-width: 350px
+	z-index: 200
+	.modalClose
+		position: absolute
+		top: 5px 
+		right: 15px
+		cursor: pointer
+		font-weight: 500
+
+.splashAndroid
+	position: fixed
+	width: 100vw
+	height: 100vh
+	top: 0
+	left: 0
+	z-index: 10000
+	background: rgba($colorBlack,0.60)
+	.modalClose
+		position: absolute
+		top: 10px 
+		right: 15px
+		cursor: pointer
+		font-weight: 500
+		width: 35px
+		height: 35px
+		display: block
+		z-index: 10
+		background-image: url(../img/cerrar.png)
+		background-repeat: no-repeat
+		background-size: cover
+	.contentLoading
+		+center(vh)
+		color: $colorBlack
+		font-size: 1.5rem
+		font-weight: bold
+	.contAppAndroidS
+		+bx
+		padding: 30px
+		width: 90vw
+		height: 80vh
+		min-height: 450px
+		max-height: 460px
+		background: white
+		text-align: center
+		overflow: hidden
+		.logoMonitor
+			width: 90%
+			margin: 10px auto
+			display: block
+			object-fit: scale-down
+
+		p
+			+bx
+			padding: 20px 0
+			font-size: 1.3rem
+			font-weight: 400
+			margin-bottom: 20px
+			&.h2
+				font-weight: 500
+				font-size: 2rem

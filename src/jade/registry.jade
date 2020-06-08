@@ -1,0 +1,32 @@
+-var location = "Registro"
+-var subLoc = ""
+-var titulo = "Monitoreo Fundacion Carlos Slim / Registro"
+-var descrip = ""
+-var keyword = ""
+
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	include includes/tagGTM
+	body
+		include includes/modules/loaderPrincipal
+		include includes/header
+
+		main.backgroundDark
+		
+			section.registryMonitoring.registryModule
+				.container.medium
+							
+					//- h1.h1 Seguimiento COVID-19
+					//- h2.h3 1. REGISTRO
+					//- p Al ser empleado de 
+					//- 	strong Grupo CARSO 
+					//- 	| es necesario tu registro en la plataforma para ofrecer un seguimiento adecuado.
+
+					include includes/modules/cardRegistry
+
+		include includes/scriptsCss

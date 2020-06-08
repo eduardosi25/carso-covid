@@ -1,0 +1,117 @@
+.registryMonitoring
+	+bx
+	padding: 60px 0
+	.h1
+		padding-bottom: 30px
+	.h3
+		padding-bottom: 20px
+		+ p
+			padding-bottom: 20px
+			line-height: 1.3
+	
+	.smallText
+		padding: 10px 0 
+
+	.btn
+		max-width: 400px
+		margin: auto
+
+	.isolation
+		+flexDir(row)
+	.isolation,
+	.isolationContinue
+		.btn
+			font-size: 18px
+			max-width: 45%
+			margin: 0
+		&.error
+			.btn
+				background: rgba($error,0.2)
+				border-color: $error
+				color: $colorBlack	
+
+	.thanksMonitoringCaseOne
+		text-align: center
+		line-height: 1.3
+		margin: 10px auto
+		max-width: 480px
+
+		a
+			+aReset
+			text-decoration: underline
+			color: $colorBlue
+
+		.mailLink
+			padding: 20px 0 0
+
+		.h1
+			padding-bottom: 0px
+		.bigText
+			+bx
+			font-size: 36px
+			padding: 20px 0
+			a
+				+aReset
+				color: $colorBlue
+
+		.firstRegister
+			+bx
+			padding: 15px 0 0
+			margin: auto
+			max-width: 280px
+			display: none
+			&.yes
+				display: block
+		.idUsuario
+			+bx
+			padding: 10px 0 0
+			display: block
+			color: $colorBlue
+
+	.infoWarning
+		.icoWarning
+			width: 60px
+			height: 60px
+			margin: 0px auto
+			display: block
+		.textCenter
+			margin: 10px 0
+
+	.notificationAlert
+		+bx
+		padding: 30px
+		color: $colorBlack
+		background: #fcfdb2
+		margin-bottom: 20px
+		margin-top: -20px
+		position: relative
+		+mediaMax780
+			text-align: center
+		p
+			font-size: 1rem 
+			padding-bottom: 10px
+		strong
+			font-size: 1rem
+			font-weight: 600 
+		.modalC
+			position: absolute
+			top: 10px
+			right: 20px
+			font-size: 20px
+			color: $colorBlack
+			text-transform: lowercase
+			cursor: pointer
+
+.sessionInit
+	overflow: hidden
+	margin-bottom: 25px
+	margin-top: -35px
+	h1
+		font-weight: 300
+	h2
+		font-weight: 500
+		text-transform: uppercase
+
+.registryFamilyModule
+	.titleStep
+		letter-spacing: 1.15px

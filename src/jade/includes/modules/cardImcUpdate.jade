@@ -1,0 +1,13 @@
+.form.FormIMC
+	.headCard
+		.titleStep Índice de Masa Corporal
+	.card.monitoring
+		.fieldset
+			+inputField('*Peso (kg)' ,'text', 'Obligatorio', 'imcPesoReg')
+		.fieldset
+			+inputField('*Estatura (cm)' ,'text', 'Obligatorio', 'imcAlturaReg')
+
+	p.smallText *Campos obligatorios
+
+	.fieldset
+		button(type="button").btn.primario.middleIMCForm Continuar

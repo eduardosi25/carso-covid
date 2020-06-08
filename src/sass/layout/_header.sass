@@ -1,0 +1,44 @@
+header
+	+bx
+	+grad(90deg, $colorBlue, $colorLightBlue)
+	padding: 15px
+	max-height: 80px
+	height: 100%
+	display: block
+	&.managed
+		background: white
+		border-bottom: 1px solid $colorGray
+		box-shadow:  0 -1px 7px #000
+
+	.container
+		+flex
+		+flexDir(row)
+		+alignItem(center)
+		+justifyCont(space-between)
+		+mediaMax640
+			+justifyCont(flex-start)
+
+	.logoCarso,
+	.logoCarsoN
+		width: 185px
+		height: 50px
+		+mediaMax960
+			margin: auto
+
+	.menuReturn
+		display: none
+		position: absolute
+		&:before
+			content: "<"
+			font-size: 30px
+			color: $colorGray
+		+mediaMax640
+			display: block
+			margin-right: 20px
+
+	.h1
+		color: white
+		text-transform: uppercase
+		display: inline-block
+		+mediaMax640
+			display: none

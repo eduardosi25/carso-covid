@@ -1,0 +1,277 @@
+a, 
+input[type="button"],
+input[type="submit"],
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+textarea,
+select,
+button
+	cursor: pointer
+	&:focus
+		outline: none
+
+a
+	&.reset
+		+aReset
+
+textarea
+	resize: none
+	min-width: auto
+	width: 100%
+	min-height: 100px
+
+select
+	+bx
+	+appearance
+	width: 100%
+	padding: 20px 15px
+	border: 1px solid $colorGray
+	border-radius: 3px
+	&:-ms-expand
+		display: none
+	&:disabled
+		background: $colorGray
+		opacity: 0.4
+
+.select
+	position: relative
+
+fieldset,
+.fieldset
+	+bx
+	+flex
+	+flexDir(column)
+	padding: 15px 0
+	width: 100%
+
+
+input[type='date'], 
+input[type='time']
+	+bx
+	+appearance
+	width: 100%
+	padding: 20px 15px
+	border: 1px solid $colorGray
+	border-radius: 3px
+	&:-ms-expand
+		display: none
+	&:disabled
+		background: $colorGray
+		opacity: 0.4
+
+
+.contInput,
+.contSelect,
+.contCheckRadio
+	+bx
+	+flex
+	width: 100%
+
+.contInput,
+.contSelect
+	+flexDir(column)
+
+.contCheckRadio
+	+flexDir(row)
+	+alignItem(center)
+	margin: 10px 0
+	input
+		display: inline
+		width: auto
+		display: none
+
+	label
+		padding: 0
+	&.checkbox
+		label
+			+flex
+			+flexDir(row)
+			+alignItem(center)
+			position: relative
+			&:before
+				content: ""
+				width: 30px
+				min-width: 30px
+				height: 30px
+				display: inline-block
+				border: 2px solid $colorGray
+				margin-right: 30px
+				background: white
+		input
+			&:checked
+				+ label
+					&:before
+						content: ""
+						border: 2px solid $colorBlue
+						background: $colorBlue
+					&:after
+						content: ""
+						position: absolute
+						background-image: url(../img/check.svg)
+						background-repeat: no-repeat
+						background-size: cover
+						margin-left: 2px
+						width: 30px
+						height: 30px
+						top: calc(50% - 15px)
+						left: 0
+	&.radio
+		label
+			+flex
+			+flexDir(row)
+			+alignItem(center)
+			position: relative
+			&:before
+				content: ""
+				width: 30px
+				min-width: 30px
+				height: 30px
+				display: inline-block
+				border: 2px solid $colorGray
+				border-radius: 50%
+				margin-right: 30px
+				background: white
+		input
+			&:checked
+				+ label
+					&:before
+						content: ""
+						border: 2px solid $colorBlue
+						background: $colorBlue
+					&:after
+						content: ""
+						position: absolute
+						background: $colorBlue
+						border-radius: 50%
+						border: 5px solid $colorWhite
+						width: 20px
+						height: 20px
+						margin-left: 2px
+						top: calc(50% - 15px)
+						left: 0
+
+	&.switchToggle
+		label
+			+flex
+			+flexDir(row)
+			+alignItem(center)
+			position: relative
+			&:before
+				content: ""
+				width: 30px
+				height: 30px
+				display: inline-block
+				border: 2px solid $colorGray
+				margin-right: 30px
+				background: white
+		input
+			&:checked
+				+ label
+					&:before
+						content: ""
+						border: 2px solid $colorBlue
+						background: $colorBlue
+					&:after
+						content: ""
+						position: absolute
+						background-image: url(../img/check.svg)
+						background-repeat: no-repeat
+						background-size: cover
+						margin-left: 2px
+						width: 30px
+						height: 30px
+
+	&.btnToggle
+		label
+			+bx
+			padding: 15px 40px
+			width: 100%
+			text-align: center
+			text-decoration: none
+			font-size: 20px
+			border: none
+			background: $colorWhite
+			border: 3px solid $colorGray
+			color: $colorGray
+			
+		input
+			&:checked
+				+ label
+					color: white
+					background: $colorBlue
+					border: 3px solid $colorBlue
+					
+
+input,
+textarea
+	+bx
+	width: 100%
+	padding: 20px 15px
+	border: 1px solid $colorGray
+	border-radius: 3px
+	&.error
+		background: rgba($error,0.2)
+		border-color: $error
+		+ .errorMessage
+			display: block
+
+div
+	&.error
+		background: rgba($error,0.2)
+		border-color: $error
+		+ .errorMessage
+			display: block
+
+
+.error
+	select
+		background: transparent
+
+label
+	+bx
+	padding: 0 0 10px
+	font-weight: 500
+	color: $colorBlack
+
+
+.errorMessage
+	color: $error
+	font-size: 0.8rem
+	padding: 5px 
+	display: none
+	&.show
+		display: block
+
+
+.forTwo,
+.forThree
+	+flex
+	+flexDir(row)
+	+flexWrap(wrap)
+	+justifyCont(space-between)
+	+mediaMax640
+		+flexDir(column)
+	.contCheckRadio,
+	.btnToggle,
+	.contInput
+		margin: 10px 0
+		
+
+.forTwo
+	.contCheckRadio,
+	.btnToggle,
+	.contInput
+		max-width: 45%
+		+mediaMax640
+			max-width: 100%
+		
+
+.forThree
+	.contCheckRadio,
+	.btnToggle,
+	.contInput
+		max-width: 30%
+		+mediaMax640
+			max-width: 100%

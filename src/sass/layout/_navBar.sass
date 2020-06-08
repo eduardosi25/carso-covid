@@ -1,0 +1,159 @@
+.navBar
+	+bx
+	+flexDir(row)
+	+justifyCont(space-around)
+	+alignItem(flex-end)
+	display: none
+	border-top: 1px solid $colorGray
+	width: 100%
+	position: fixed
+	bottom: 0
+	left: 0
+	height: 100px
+	background: white
+	+mediaMax960
+		+flex
+	li
+		+bx
+		+flex
+		+flexDir(column)
+		+alignItem(center)
+		padding: 20px 0
+		margin: 0 10px
+		cursor: pointer
+		cursor: pointer
+		font-size: 14px
+		min-width: 100px
+		
+		&.inicioNavBar
+			&:before
+				content: ""
+				display: inline-block
+				background:
+					image: url(../img/home-inactive.svg)
+					size: contain
+					repeat: no-repeat
+				width: 30px 
+				height: 30px
+				margin-bottom: 5px
+		
+		&.infoNavBar
+			&:before
+				content: ""
+				display: inline-block
+				background:
+					image: url(../img/info-inactive.svg)
+					size: contain
+					repeat: no-repeat
+				width: 30px 
+				height: 30px
+				margin-bottom: 5px
+
+		&.logOutNavBar
+			&:before
+				content: ""
+				display: inline-block
+				background:
+					image: url(../img/close-inactive.svg)
+					size: contain
+					repeat: no-repeat
+				width: 30px 
+				height: 30px
+				margin-bottom: 5px
+		
+		&.userProfileNavBar
+			&:before
+				content: ""
+				display: inline-block
+				background:
+					image: url(../img/perfil-inactive.svg)
+					size: contain
+					repeat: no-repeat
+				width: 30px 
+				height: 30px
+				margin-bottom: 5px
+
+		&.active
+			color: $colorBlue
+			&.inicioNavBar
+				&:before
+					content: ""
+					background-image: url(../img/home-active.svg)!important
+					margin-bottom: 5px
+			&.infoNavBar
+				&:before
+					content: ""
+					background-image: url(../img/info-active.svg)!important
+						
+					margin-bottom: 5px
+			&.logOutNavBar
+				&:before
+					content: ""
+					background-image: url(../img/close-active.svg)!important
+					margin-bottom: 5px
+
+			&.userProfileNavBar
+				&:before
+					content: ""
+					background-image: url(../img/perfil-active.svg)!important
+					margin-bottom: 5px
+
+
+header
+	.navBar
+		position: relative
+		max-width: 600px
+		border-top: none
+		height: auto
+		li
+			+bx
+			padding: 0 40px !important
+			margin: 0 10px !important
+			font-size: 19px
+			cursor: pointer
+			&:last-child
+				padding-right: 0!important
+
+			&.logOutNavBar
+				&:before
+					content: none
+
+			&.infoNavBar
+				&:before
+					content: none
+
+			&.inicioNavBar
+				&:before
+					content: none
+
+			&.userProfileNavBar
+				&:before
+					content: none
+
+			&.active
+				color: $colorBlue
+				&.logOutNavBar
+					&:before
+						content: none
+				&.infoNavBar
+					&:before
+						content: none
+				&.inicioNavBar
+					&:before
+						content: none
+				&.userProfileNavBar
+					&:before
+						content: none
+
+header
+	+mediaMin960
+		.navBar
+			+flex
+	+mediaMax960
+		.navBar
+			display: none
+
+
+.menuFooter
+	+mediaMax960
+		margin-bottom: 100px

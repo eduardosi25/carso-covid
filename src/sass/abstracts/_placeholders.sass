@@ -1,0 +1,185 @@
+//- Clearfix
+%cf
+	*zoom: 1
+	&:after
+		content: ""
+		display: table
+		clear: both
+
+//- Grid
+%container
+	width: 100%
+	max-width:  1326px
+	margin: auto
+	[class*="g-"]
+		+bx
+		padding: 0 5px
+		display: inline-block
+		float: left
+		position: relative
+
+//- Grid
+%g-15
+	width: $g15
+	&.important
+		width: $g15 !important
+%g-14
+	width: $g14
+	&.important
+		width: $g14 !important
+%g-13
+	width: $g13
+	&.important
+		width: $g13 !important
+%g-12
+	width: $g12
+	&.important
+		width: $g12 !important
+%g-11
+	width: $g11
+	&.important
+		width: $g11 !important
+%g-10
+	width: $g10
+	&.important
+		width: $g10 !important
+%g-9
+	width: $g9
+	&.important
+		width: $g9 !important
+%g-8
+	width: $g8
+	&.important
+		width: $g8 !important
+%g-7
+	width: $g7
+	&.important
+		width: $g7 !important
+%g-6
+	width: $g6
+	&.important
+		width: $g6 !important
+%g-5
+	width: $g5
+	&.important
+		width: $g5 !important
+%g-4
+	width: $g4
+	&.important
+		width: $g4 !important
+%g-3
+	width: $g3
+	&.important
+		width: $g3 !important
+%g-2_5
+	width: $g2_5
+	&.important
+		width: $g2_5 !important
+%g-2
+	width: $g2
+	&.important
+		width: $g2 !important
+%g-1
+	width: $g1
+	&.important
+		width: $g1 !important
+
+%s-14
+	margin-left: $g14	
+%s-13
+	margin-left: $g13
+%s-12
+	margin-left: $g12
+%s-11
+	margin-left: $g11
+%s-10
+	margin-left: $g10
+%s-9
+	margin-left: $g9
+%s-8
+	margin-left: $g8
+%s-7
+	margin-left: $g7
+%s-6
+	margin-left: $g6
+%s-5
+	margin-left: $g5
+%s-4
+	margin-left: $g4
+%s-3
+	margin-left: $g3
+%s-2
+	margin-left: $g2
+%s-1
+	margin-left: $g1
+
+
+=link
+	+aReset
+	+font-size(14px)
+	color: $color-btn-azul
+	cursor: pointer
+	&.next
+		&:after
+			+fawesome("\f105")
+			margin-left: 5px
+	&.prev
+		&:before
+			+fawesome("\f104")
+			margin-right: 5px
+	&.history
+		&:before
+			+fawesome("\f0c5")
+			margin-right: 5px
+	&.billing
+		&:before
+			+fawesome("\f15b")
+			margin-right: 5px
+	&.config
+		&:before
+			+fawesome("\f013")
+			margin-right: 5px
+
+//- Base Position
+%float-left
+	float: left
+%float-right
+	float: right
+%center
+	display: table
+	margin-left: auto
+	margin-right: auto
+
+//- Base Spacing
+%min-space-bottom
+	margin-bottom: $spacer/2
+%space-bottom
+	margin-bottom: $spacer
+%max-space-bottom
+	margin-bottom: $spacer*2
+%min-space-top
+	margin-top: $spacer/2
+%space-top
+	margin-top: $spacer
+%max-space-top
+	margin-top: $spacer*2
+
+
+//- Style Fonts
+%font_small
+	font-size: 0.8em
+	&:after
+		top: 2px
+%font_big
+	font-size: 1.2em
+
+%font_sub
+	vertical-align: sub
+	font-size: 0.75rem
+	margin: 0
+	padding: 0
+%font_super
+	vertical-align: super
+	font-size: 0.75rem
+	margin: 0
+	padding: 0

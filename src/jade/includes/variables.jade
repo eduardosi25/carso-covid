@@ -1,0 +1,30 @@
+-var arrayTemp = [{key: '35.00', value: 'menor de 36 ºC'}, {key: '36.00', value: '36 ºC'}, {key: '36.10', value: '36.1 ºC'}, {key: '36.20', value: '36.2 ºC'}, {key: '36.30', value: '36.3 ºC'}, {key: '36.40', value: '36.4 ºC'}, {key: '36.50', value: '36.5 ºC'}, {key: '36.60', value: '36.6 ºC'}, {key: '36.70', value: '36.7 ºC'}, {key: '36.80', value: '36.8 ºC'}, {key: '36.90', value: '36.9 ºC'}, {key: '37.00', value: '37 ºC'}, {key: '37.10', value: '37.1 ºC'}, {key: '37.20', value: '37.2 ºC'}, {key: '37.30', value: '37.3 ºC'}, {key: '37.40', value: '37.4 ºC'}, {key: '37.50', value: '37.5 ºC'}, {key: '37.60', value: '37.6 ºC'}, {key: '37.70', value: '37.7 ºC'}, {key: '37.80', value: '37.8 ºC'}, {key: '37.90', value: '37.9 ºC'}, {key: '38.00', value: '38 ºC'}, {key: '38.10', value: '38.1 ºC'}, {key: '38.20', value: '38.2 ºC'}, {key: '38.30', value: '38.3 ºC'}, {key: '38.40', value: '38.4 ºC'}, {key: '38.50', value: '38.5 ºC'}, {key: '38.60', value: '38.6 ºC'}, {key: '38.70', value: '38.7 ºC'}, {key: '38.80', value: '38.8 ºC'}, {key: '38.90', value: '38.9 ºC'}, {key: '39.00', value: '39 ºC'}, {key: '39.10', value: '39.1 ºC'}, {key: '39.20', value: '39.2 ºC'}, {key: '39.30', value: '39.3 ºC'}, {key: '39.40', value: '39.4 ºC'}, {key: '39.50', value: '39.5 ºC'}, {key: '39.60', value: '39.6 ºC'}, {key: '39.70', value: '39.7 ºC'}, {key: '39.80', value: '39.8 ºC'}, {key: '39.90', value: '39.9 ºC'}, {key: '40.00', value: '40 ºC'}, {key: '41.00', value: 'mayor de 40  ºC'}]
+
+-var arrayWhere = []
+-var arrayBusiness = []
+-var arrayArea = []
+-var arrayFamilyRelationship = []
+
+//- versionProd = '3.5.1'
+//-	-var Stage = 'prod'
+//-	-var Stage = 'rc1'
+
+-var Stage = 'dev'
+
+if(Stage === 'dev')
+	-var CodeGTM = 'MM00000'
+	-var downAndroid = 'download/monitoreoV4_0_1_dev.apk'
+	-var downIos = 'itms-services://?action=download-manifest&url=https://www.dev.covid19-carso.com/download/manifestDev.plist'
+	-var version = '5.0.0.0'
+
+else if(Stage === 'rc1')
+	-var CodeGTM = 'MM11111'
+	-var downAndroid = 'download/monitoreo_V5_RC.apk'
+	-var downIos = 'itms-services://?action=download-manifest&url=https://www-rc1.fcs-monitoreo.com/download/manifestRC.plist'
+	-var version = '5.0.1'
+
+else if(Stage === 'prod')
+	-var CodeGTM = 'MM3DCR5'
+	-var downAndroid = 'download/monitoreo_V5.apk'
+	-var downIos = 'itms-services://?action=download-manifest&url=https://www.fcs-monitoreo.com/download/manifest.plist'
+	-var version = '5.0.0'

@@ -1,0 +1,38 @@
+section.myClinicalCards
+	.container
+
+		.headCard
+			.titleStep Datos Personales 
+
+
+		.countCardsSections
+			
+			.card
+				p.h4 Información General 
+				dl.dateProfile
+					dt Fecha de registro:
+					dd
+				dl.sexProfile
+					dt Sexo:
+					dd 
+
+			.card.imcUpdateData
+				dl.imcWeightProfile.hidden
+					dt Peso:
+					dd 
+				dl.imcHeightProfile.hidden
+					dt Altura:
+					dd 
+				dl.imcProfile
+					dt Indice de masa corporal:
+					dd 
+				dl.imcDiagnostic.hidden
+					dt Diagnostico:
+					dd 
+				a(href="bmiUpdate.html").btn.secundarioV2.edit Editar
+
+			.card.simptompsUpdateData
+				p.h4 Antecedentes de salud
+				ul.simptomsList
+
+				a(href="simptompsUpdate.html").btn.secundarioV2.edit Editar

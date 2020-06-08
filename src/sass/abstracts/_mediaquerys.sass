@@ -1,0 +1,124 @@
+//- Mediaqueries
+//
+//- Clases html 
+=mobileParent
+	html.mobile &
+		@content
+
+=iframeParent
+	html.iframe &
+		@content
+
+=desktopParent
+	html.desktop &
+		@content
+
+
+
+//- iPad Pro 12.9'
+=ipadProPort
+	@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px) and (min-device-height : 1366px) and (max-device-height : 1366px) and (min-width: 1024px) and (max-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) and (device-aspect-ratio: 512/683)
+		@content
+
+=ipadProLand
+	@media only screen and (min-device-width : 1024px) and (max-device-width : 1366px) and (min-device-height : 1366px) and (max-device-height : 1366px) and (min-width: 1366px) and (max-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) and (device-aspect-ratio: 512/683)
+		@content
+
+//- S8
+=s8Port
+	@media only screen and (min-device-width : 360px) and (max-device-width : 740px) and (min-device-height : 740px) and (max-device-height : 740px) and (min-width: 360px) and (max-width: 360px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 3) and (device-aspect-ratio: 18/37)
+		@content
+
+=s8Land
+	@media only screen and (min-device-width : 360px) and (max-device-width : 740px)and (min-device-height : 360px) and (max-device-height : 740px)and (min-width: 692px) and (max-width: 740px)   and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) and (device-aspect-ratio: 37/18)
+		@content
+
+//- Teclado activado
+=hideFloatMobile
+	@media  only screen and (max-device-height: 900px) and (max-height: 400px) and (max-width: 480px) and (orientation: landscape)
+		@content
+
+		
+//- Mediaqueries
+//- -xl
+=mediaMax1500
+	@media only screen and (max-width: 1560px)
+		@content
+=mediaMin1500
+	@media only screen and (min-width: 1500px)
+		@content
+
+//- -lt
+=mediaMax1400
+	@media only screen and (max-width: 1400px)
+		@content
+
+//- -lg
+=mediaMax1280
+	@media only screen and (max-width: 1280px)
+		@content
+=mediaMin1280
+	@media only screen and (min-width: 1280px)
+		@content
+
+=mediaMax1200
+	@media only screen and (max-width: 1200px)
+		@content
+=mediaMin1200
+	@media only screen and (min-width: 1200px)
+		@content
+
+//- -ld
+=mediaMax1102
+	@media only screen and (max-width: 1102px)
+		@content
+=mediaMin1102
+	@media only screen and (min-width: 1102px)
+		@content
+
+//- -d Tablet
+=mediaMax960
+	@media only screen and (max-width: 960px)
+		@content
+=mediaMin960
+	@media only screen and (min-width: 960px)
+		@content
+
+=mediaMax780
+	@media only screen and (max-width: 780px)
+		@content
+=mediaMin780
+	@media only screen and (min-width: 780px)
+		@content
+		
+//- -md
+=mediaMax760
+	@media only screen and (max-width: 760px)
+		@content
+=mediaMin760
+	@media only screen and (min-width: 760px)
+		@content
+
+//- -m Smartphone
+=mediaMax640
+	@media only screen and (max-width: 640px)
+		@content
+
+=mediaMax580
+	@media only screen and (max-width: 580px)
+		@content
+
+//- -sm
+=mediaMax480
+	@media only screen and (max-width: 480px)
+		@content
+
+//- -s
+=mediaMax320
+	@media only screen and (max-width: 320px)
+		@content
+
+//- -ss
+=mediaMax240
+	@media only screen and (max-width: 240px)
+		@content

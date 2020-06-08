@@ -1,0 +1,55 @@
+//-Funciones
+@function strip-unit($num)
+	@return $num / ($num * 0 + 1)
+
+	
+@function calculateRem($size)
+	$remSize: $size / $remVal
+	@return $remSize * 1rem
+
+
+=font-size($size,$imp...)
+	font-size: $size $imp
+	font-size: calculateRem($size) $imp
+
+=remsXpx($property, $values... )
+	$max: length($values)
+	$pxValues: ''
+	$remValues: ''
+
+	@for $i from 1 through $max
+		$value: strip-unit(nth($values, $i))
+		$pxValues: #{$pxValues + $value*strip-unit($remVal)}px
+		@if $i < $max
+			$pxValues: #{$pxValues + " "}
+
+	@for $i from 1 through $max
+		$value: strip-unit(nth($values, $i))
+		$remValues: #{$remValues + $value}rem
+
+		@if $i < $max
+			$remValues: #{$remValues + " "}
+
+	#{$property}: $pxValues
+	#{$property}: $remValues
+
+=pxXrems($property, $values...)
+	$max: length($values)
+	$pxValues: ''
+	$remValues: ''
+
+	@for $i from 1 through $max
+		$value: strip-unit(nth($values, $i))
+		$pxValues: #{$pxValues + $value}px
+
+		@if $i < $max
+			$pxValues: #{$pxValues + " "}
+
+	@for $i from 1 through $max
+		$value: strip-unit(nth($values, $i))
+		$remValues: #{$remValues + $value/strip-unit($remVal)}rem
+
+		@if $i < $max
+			$remValues: #{$remValues + " "}
+	#{$property}: $pxValues
+	#{$property}: $remValues

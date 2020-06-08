@@ -1,0 +1,30 @@
+-var location = "monitoreoUsuario"
+-var subLoc = ""
+-var titulo = "Monitoreo Fundacion Carlos Slim / Monitoreo"
+-var descrip = ""
+-var keyword = ""
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	include includes/tagGTM
+	body
+		include includes/modules/loaderPrincipal
+		include includes/header
+		
+		main.backgroundDark
+
+			section.registryMonitoring.monitoringModule
+				.container.medium
+					.sessionInit.hidden
+						h1.h3 Seguimiento COVID-19
+						h2.h3 Monitoreo diario de síntomas
+					//- p.userName.hidden
+					//- p.userID.hidden
+
+					include includes/modules/cardMonitoring
+
+		include includes/scriptsCss
