@@ -45,11 +45,17 @@ steps:
     tags: |
       latest
       latest-$(releaseConfig)
+      $(webLibraryVersion)
       $(webLibraryVersion)-$(releaseConfig)
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
 - script: |
+    sed 's/@version/$(webLibraryVersion)-$(debugConfig)/g' k8s-deployment-manifest.yml.tmplt > k8s-deployment-manifest.yml
+  displayName: 'bake manifest (debug)'
+  condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master'))
+- script: |
     sed 's/@version/$(webLibraryVersion)/g' k8s-deployment-manifest.yml.tmplt > k8s-deployment-manifest.yml
-  displayName: 'bake manifest'
+  displayName: 'bake manifest (release)'
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: 'k8s-deployment-manifest.yml'

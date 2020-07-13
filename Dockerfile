@@ -1,4 +1,2 @@
-FROM alpine:3.12
-EXPOSE 80
-COPY ["dist/.", "/var/www/html/"]
-CMD ["httpd-foreground"]
+FROM httpd:2.4-alpine
+COPY ["dist/.", "/usr/local/apache2/htdocs/"]
