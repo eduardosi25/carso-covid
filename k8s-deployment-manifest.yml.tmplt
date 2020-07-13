@@ -17,7 +17,7 @@ spec:
       containers:
       - name: monitor-portal
         imagePullPolicy: Always
-        image: aeolus01e4ce.azurecr.io/portal:@version
+        image: ghmonitor019de6.azurecr.io/portal:@version
         ports:
         - containerPort: 80
 ---
