@@ -47,3 +47,11 @@ steps:
       latest-$(releaseConfig)
       $(webLibraryVersion)-$(releaseConfig)
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+- script: |
+    sed 's/@version/$(webLibraryVersion)/g' k8s-deployment-manifest.yml.tmplt > k8s-deployment-manifest.yml
+  displayName: 'bake manifest'
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: 'k8s-deployment-manifest.yml'
+    artifactName: 'manifests'
+    publishLocation: 'Container'
