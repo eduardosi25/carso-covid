@@ -55,3 +55,8 @@ steps:
     pathtoPublish: 'k8s-deployment-manifest.yml'
     artifactName: 'manifests'
     publishLocation: 'Container'
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: 'version'
+    artifactName: 'manifests'
+    publishLocation: 'Container'
