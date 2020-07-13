@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: monitor-portal
+  labels:
+    app: monitor-portal
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: monitor-portal
+  template:
+    metadata: 
+      labels:
+        app: monitor-portal
+    spec:
+      containers:
+      - name: monitor-portal
+        imagePullPolicy: Always
+        image: aeolus01e4ce.azurecr.io/portal:@version
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    service.beta.kubernetes.io/azure-dns-label-name: monitor-portal
+  name: monitor-portal
+spec:
+  type: LoadBalancer
+  selector:
+    app: monitor-portal
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
