@@ -1,12 +1,12 @@
 .form.FormFirst
 	.headCard
 		.step 1
-		.titleStep Datos Personales 
+		.titleStep Datos personales 
 	.card.monitoring
 		.fieldset
 			+inputField('*Correo electrónico' ,'email', 'Obligatorio (Corporativo)', 'emailReg', '', 'new-email')
 		.fieldset
-			+inputField('*Crea una contraseña' ,'password', 'Minimo 6 caracteres', 'passwordReg','', 'new-password')
+			+inputField('*Crea una contraseña' ,'password', 'Mínimo 6 caracteres', 'passwordReg','', 'new-password')
 		.fieldset
 			+inputField('*Nombre(s)' ,'text', 'Obligatorio', 'nombreReg')
 		.fieldset
@@ -40,6 +40,10 @@
 		
 	p.smallText *Campos obligatorios
 
+	.fieldset.fieldDouble
+		+checkbox('', 'aviso-privacidad', 'aviso')
+		p * He leído y acepto el #[a(href="privacyPolicies.html").privacity Aviso de Privacidad ] para el uso de Monitor
+
 	.fieldset
 		button(type="button").btn.primario.firstForm Continuar
 
@@ -47,12 +51,12 @@
 
 .form.FormMiddle.hidden
 	.headCard
-		.titleStep Precedentes de salud
+		.titleStep Antecedentes de salud
 	.card.monitoring
 		.fieldset.pregnantHide.hidden
-			label  *¿Estas embarazada?
+			label  *¿Estás embarazada?
 			.forTwo.w75.pregnantType
-				+radioButton('Si', 'pregnantReg', 'si', '10')
+				+radioButton('Sí', 'pregnantReg', 'si', '10')
 				+radioButton('No', 'pregnantReg', 'no', 'no')
 			.errorMessage
 
@@ -66,11 +70,11 @@
 	.fieldset
 		button(type="button").btn.primario.middleForm Continuar
 
-
 .form.FormMiddleIMC.hidden
 	.headCard
-		.titleStep Índice de Masa Corporal
+		.titleStep Información general
 	.card.monitoring
+		label  Índice de Masa Corporal
 		.fieldset
 			+inputField('*Peso (kg)' ,'text', 'Obligatorio', 'imcPesoReg')
 		.fieldset
@@ -90,7 +94,7 @@
 		.fieldset
 			+inputField('*Teléfono Celular:' ,'text', 'Obligatorio a 10 dígitos', 'telefonoCeluilarReg')
 		.fieldset
-			+inputField('*¿A quien llamar en caso de emergencia? (Familiar o cónyuge)' ,'text', 'Nombre completo de familiar o conyugue', 'nombreFamiliarReg')
+			+inputField('*¿A quien llamar en caso de emergencia? (Familiar o cónyuge)' ,'text', 'Nombre completo de familiar o cónyuge', 'nombreFamiliarReg')
 		.fieldset
 			+inputField('*Teléfono de Emergencia' ,'text', 'Obligatorio a 10 dígitos', 'telefonoEmergenciaReg')
 

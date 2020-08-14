@@ -1,14 +1,16 @@
 .form.FormFirst
 	.headCard
 		.step 1
-		.titleStep Datos Personales 
+		.titleStep Datos personales 
 	.card.monitoring
+		.fieldset
+			+inputField('*Token de registro (proporcionado por el área de RH de la empresa)' ,'token', 'Obligatorio', 'tokenReg')
 		.fieldset
 			+inputField('*Correo electrónico' ,'email', 'Obligatorio (Corporativo)', 'emailReg')
 		.fieldset
 			+inputField('Número de empleado' ,'text', '', 'idEmpleadoReg')
 		.fieldset
-			+inputField('*Crea una contraseña' ,'password', 'Minimo 6 caracteres', 'passwordReg')
+			+inputField('*Crea una contraseña' ,'password', 'Mínimo 6 caracteres', 'passwordReg')
 		.fieldset
 			+inputField('*Nombre(s)' ,'text', 'Obligatorio', 'nombreReg')
 		.fieldset
@@ -28,7 +30,6 @@
 				+radioButton('Femenino', 'genderReg', 'f', 'f')
 				+radioButton('Masculino', 'genderReg', 'm', 'm')
 			.errorMessage
-
 		//- .fieldset
 			label  *¿Tienes alguna de estas enfermedades?
 			.forTwo.arrayDiseases
@@ -42,6 +43,10 @@
 		
 	p.smallText *Campos obligatorios
 
+	.fieldset.fieldDouble
+		+checkbox('', 'aviso-privacidad', 'aviso')
+		p * He leído y acepto el #[a(href="privacyPolicies.html").privacity Aviso de Privacidad ] para el uso de Monitor
+
 	.fieldset
 		button(type="button").btn.primario.firstForm Continuar
 
@@ -49,12 +54,12 @@
 
 .form.FormMiddle.hidden
 	.headCard
-		.titleStep Precedentes de salud
+		.titleStep Antecedentes de salud
 	.card.monitoring
 		.fieldset.pregnantHide.hidden
-			label  *¿Estas embarazada?
+			label  *¿Estás embarazada?
 			.forTwo.w75.pregnantType
-				+radioButton('Si', 'pregnantReg', 'si', '10')
+				+radioButton('Sí', 'pregnantReg', 'si', '10')
 				+radioButton('No', 'pregnantReg', 'no', 'no')
 			.errorMessage
 
@@ -68,11 +73,11 @@
 	.fieldset
 		button(type="button").btn.primario.middleForm Continuar
 
-
 .form.FormMiddleIMC.hidden
 	.headCard
-		.titleStep Índice de Masa Corporal
+		.titleStep Información general
 	.card.monitoring
+		label  Índice de Masa Corporal
 		.fieldset
 			+inputField('*Peso (kg)' ,'text', 'Obligatorio', 'imcPesoReg')
 		.fieldset
@@ -93,6 +98,9 @@
 		//- 	label  *División
 		//- 	+select('selecDivicion', 'Selecciona una opción' , arrayTemp)
 
+		.fieldset.hidden
+			label  *Grupo en el que laboras:
+			+select('selecGrupoReg', 'Selecciona una opción' , arrayGroupJob)
 		.fieldset
 			label  *Empresa en la que laboras:
 			+select('selecEmpresaReg', 'Selecciona una opción' , arrayBusiness)
@@ -104,12 +112,12 @@
 		.fieldset
 			+inputField('*Teléfono Celular:' ,'text', 'Obligatorio a 10 dígitos', 'telefonoCeluilarReg')
 		.fieldset
-			+inputField('*¿A quien llamar en caso de emergencia? (Familiar o cónyuge)' ,'text', 'Nombre completo de familiar o conyugue', 'nombreFamiliarReg')
+			+inputField('*¿A quien llamar en caso de emergencia? (Familiar o cónyuge)' ,'text', 'Nombre completo de familiar o cónyuge', 'nombreFamiliarReg')
 		.fieldset
 			+inputField('*Teléfono de Emergencia' ,'text', 'Obligatorio a 10 dígitos', 'telefonoEmergenciaReg')
 		//- .fieldset
 		//- 	+inputField('*Teléfono del trabajo:' ,'text', 'Opcional a 10 dígitos', 'telefonoTrabajoReg')
-
+		
 
 	p.smallText *Campos obligatorios
 

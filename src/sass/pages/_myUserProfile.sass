@@ -1,28 +1,19 @@
-.userName
-	color: $colorBlack
-	font-size: 30px
-	padding-bottom: 20px
-	overflow: hidden
-	text-transform: capitalize
-
-.userID
-	color: $colorDarkBlue
-	font-size: 20px
-	padding-bottom: 10px
-	overflow: hidden
-
-
 .countDataEmployemen
 	margin-top: 30px
 
 .myUserCards
 	+bx
 	padding: 60px 0
+	+mediaMax640
+		padding-top: 20px
 	.countDataUser
 		+bx
 		background: $colorGray
 		width: 100%
 		padding: 20px
+		+mediaMax640
+			padding: 10px 20px
+			border-radius: 8px
 
 	.personalData,
 	.employData
@@ -35,7 +26,9 @@
 			span
 				display: inline-block
 				margin-left: 5px
-	.clinicalProfile
+	.clinicalProfile,
+	.registerFamily,
+	.newNormal
 		cursor: pointer
 		p
 			text-align: center
@@ -44,6 +37,8 @@
 			+flexDir(row)
 			+justifyCont(flexStart)
 			+alignItem(center)
+			p
+				text-align: left
 
 	.countCardsSections
 		+flex
@@ -66,11 +61,13 @@
 			max-width: 300px
 			+mediaMax640
 				margin: 5px 20px 5px -5px
-		.icoClinicalProfile
+		.icoClinicalProfile,
+		.icoFamily,
+		.icoNewNormal
 			+mediaMax640
-				width: 30px
-				height: 40px
-				display: block
+				width: 50px
+				height: 60px
+				display: block 
 		.card
 			margin: 10px
 			width: 100%
@@ -86,6 +83,57 @@
 
 	.contButton
 		padding: 40px 0
+		+mediaMax640
+			padding: 20px 0
 		.btn
 			max-width: 400px
 			margin: auto
+.cardWithButton
+	.btn
+		margin-top: 20px
+		display: block
+		cursor: pointer
+
+.companyInfoCards
+	padding: 30px 0	
+	.smallText
+		padding: 10px
+
+.myAccountCards
+	.countCardsSections
+		.icoClinicalProfile,
+		.icoFamily,
+		.icoNewNormal
+			+mediaMax640
+				width: 50px
+				height: 60px
+				display: block 
+		p
+			+mediaMax640
+				text-align: left
+
+.countCardsSections
+	.card
+		order: 2
+		+mediaMax640
+			order: 1
+	.versionText
+		+mediaMax640
+			order: 2
+
+
+.versionText
+	width: 100%
+	padding: 0 10px 20px 10px
+	justify-content: flex-end
+	+flex
+	+flexWrap(wrap)
+	+mediaMax640
+		padding: 20px 10px 10px 10px
+	p
+		background: $colorLigthGray2
+		display: inline-block
+		padding: 5px
+		font-size: 14px
+		line-height: 14px
+		border-radius: 10px

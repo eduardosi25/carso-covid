@@ -3,6 +3,8 @@
 -var titulo = "Monitoreo Fundacion Carlos Slim"
 -var descrip = ""
 -var keyword = ""
+currentUrl: req.path
+
 include includes/mixines
 include includes/variables
 doctype html
@@ -11,15 +13,17 @@ html(itemscope, itemtype="http://schema.org/WebPage")
 	include includes/tagGTM
 	body
 		include includes/modules/loaderPrincipal
+		include includes/modules/loader
 		
 		main
-			include includes/modules/cintilloAPP
+
+			include includes/modules/cintilloAPP 
 			include includes/modules/homePrincipalSection
 			include includes/modules/homeSymptomSection
 			//-include includes/modules/homeRegistrySection
 			include includes/modules/homePreventionSection
 			include includes/modules/homeMessageAdvice
-			
-
+				
+				
 		include includes/footer
 		include includes/scriptsCss

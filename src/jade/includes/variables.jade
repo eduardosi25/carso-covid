@@ -4,6 +4,9 @@
 -var arrayBusiness = []
 -var arrayArea = []
 -var arrayFamilyRelationship = []
+-var arrayHistoryDate = []
+-var arrayHistoryFilter = []
+-var arrayGroupJob = []
 
 //- versionProd = '3.5.1'
 //-	-var Stage = 'prod'
@@ -13,18 +16,18 @@
 
 if(Stage === 'dev')
 	-var CodeGTM = 'MM00000'
-	-var downAndroid = 'download/monitoreoV4_0_1_dev.apk'
+	-var downAndroid = 'https://play.google.com/store/apps/details?id=com.americamovil.monitor'
 	-var downIos = 'itms-services://?action=download-manifest&url=https://www.dev.covid19-carso.com/download/manifestDev.plist'
-	-var version = '5.0.0.0'
+	-var version = '6.4.0.0'
 
 else if(Stage === 'rc1')
 	-var CodeGTM = 'MM11111'
-	-var downAndroid = 'download/monitoreo_V5_RC.apk'
+	-var downAndroid = 'https://play.google.com/store/apps/details?id=com.americamovil.monitor'
 	-var downIos = 'itms-services://?action=download-manifest&url=https://www-rc1.fcs-monitoreo.com/download/manifestRC.plist'
-	-var version = '5.0.1'
+	-var version = '6.4.0'
 
 else if(Stage === 'prod')
 	-var CodeGTM = 'MM3DCR5'
-	-var downAndroid = 'download/monitoreo_V5.apk'
+	-var downAndroid = 'https://play.google.com/store/apps/details?id=com.americamovil.monitor'
 	-var downIos = 'itms-services://?action=download-manifest&url=https://www.fcs-monitoreo.com/download/manifest.plist'
-	-var version = '5.0.0'
+	-var version = '6.3.0'

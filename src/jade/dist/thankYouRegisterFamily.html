@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage">
+  <head lang="es" xml:lang="es">
+    <title>Monitoreo Fundacion Carlos Slim / Registro de familiar</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=no">
+    <script>
+      var b = document.documentElement; var isInIFrame = (window.location != window.parent.location); b.className = b.className.replace('no-js', 'js'); b.setAttribute("data-useragent",  navigator.userAgent); b.setAttribute("data-vendor",  navigator.vendor); b.setAttribute("data-platform", navigator.platform );if(! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){b.setAttribute("data-type", 'desktop' );} else{ b.setAttribute("data-type", 'mobile' );} if(isInIFrame == true){ b.setAttribute("data-xFrame", 'iframeTop' );} else if(navigator.userAgent.indexOf('Version') === -1){ b.setAttribute("data-xFrame", 'webView' );}
+      
+    </script>
+    <meta name="Description" content="">
+    <meta name="Keywords" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#39E6CC">
+    <link rel="manifest" href="recursos_mobile/manifest.json?Ver=5.2.0.0">
+    <link rel="preload" as="style" href="css/styles.css?Ver=5.2.0.0">
+    <link rel="preload" as="script" href="js/app.js?Ver=5.2.0.0">
+    <link rel="preload" as="script" href="js/jquery.min.js">
+    <link rel="preload" as="script" href="js/axios.min.js">
+    <link rel="preload" as="script" href="js/script.min.js?Ver=5.2.0.0">
+    <link rel="preconnect dns-prefetch" crossorigin="" href="https://www.google.com.mx/">
+    <link rel="preconnect dns-prefetch" crossorigin="" href="https://www.google.com/">
+    <link rel="preconnect dns-prefetch" crossorigin="" href="https://analytics.google.com/">
+    <link rel="preconnect dns-prefetch" crossorigin="" href="https://www.googletagmanager.com/">
+    <link rel="preconnect dns-prefetch" crossorigin="" href="https://www.gstatic.com/">
+    <link rel="preconnect dns-prefetch" crossorigin="" href="https://firebase.google.com/">
+    <link rel="shorcut icon" href="recursos_mobile/img/favicon.ico">
+    <link rel="shorcut icon" href="recursos_mobile/img/favicon.png">
+    <link rel="apple-touch-icon" href="recursos_mobile/img/icon-touch.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="recursos_mobile/img/icon-touch-72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="recursos_mobile/img/icon-touch-96.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="recursos_mobile/img/icon-touch-114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="recursos_mobile/img/icon-touch-144.png">
+    <link rel="apple-touch-icon" sizes="168x168" href="recursos_mobile/img/icon-touch-168.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="recursos_mobile/img/icon-touch-192.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="recursos_mobile/img/icon-touch-256.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="recursos_mobile/img/icon-touch-512.png">
+    <link rel="stylesheet" href="css/styles.css?Ver=5.2.0.0" type="text/css">
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MM00000');</script>
+  </head>
+  <!-- Google Tag Manager (noscript)-->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MM00000" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript)-->
+  <body>
+    <div class="loaderPrincipal">
+      <div class="contentLoading">
+        <p>Cargando . . .</p>
+      </div>
+    </div>
+    <header class="managed">
+      <div class="container">
+        <div class="menuReturn"></div>
+        <div class="logoCarsoN"></div>
+        <ul class="navBar">
+          <li class="inicioNavBar">Inicio</li>
+          <li class="infoNavBar">Info</li>
+          <!--li(class=( location == 'historyInfo' ? 'active' : '')).historialNavBar Historial-->
+          <li class="userProfileNavBar">Usuario</li>
+        </ul>
+      </div>
+    </header>
+    <main class="backgroundDark">
+      <div class="container">
+        <section class="thanYouPage sectionPadding">
+          <div class="card">
+            <p class="h4 text-center">¡Tu familiar ha sido registrado!</p>
+            <div class="col-div text-center m-40">
+              <div style="margin: 20px auto;" class="ico icoFamily mb-30"></div>
+              <p>Envía el correo y contraseña con el que lo has registrado para que pueda ingresar a realizar su monitoreo diario</p>
+            </div>
+            <section class="sectionFooter">
+              <button class="btn primario goHome">Regresar a mi perfil</button>
+            </section>
+          </div>
+        </section>
+      </div>
+    </main>
+    <ul class="navBar">
+      <li class="inicioNavBar">Inicio</li>
+      <li class="infoNavBar">Info</li>
+      <!--li(class=( location == 'historyInfo' ? 'active' : '')).historialNavBar Historial-->
+      <li class="userProfileNavBar">Usuario</li>
+    </ul>
+    <div class="scripts">
+      <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-messaging.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
+      <script src="js/app.js?Ver=5.2.0.0"></script>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/axios.min.js"></script>
+      <script src="js/script.min.js?Ver=5.2.0.0"></script>
+    </div>
+  </body>
+</html>

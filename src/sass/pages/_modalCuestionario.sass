@@ -1,0 +1,227 @@
+.modalHeader
+	width: 100%
+	.h4,
+	.h5,
+	.h6
+		font-weight: bold
+		&:not(#titlePrime):not(#agradecimiento):not(#title-danger):before,
+			content: '*'
+.modalBody
+	p:not(.h4)
+		color: $colorDarkGray
+.modalFooter
+	padding-top: 20px
+.modalWrapp
+	width: 100%
+	position: relative
+.modalItem
+	width: 100%
+	position: absolute
+	left: 0
+	top: 0
+	opacity: 0
+	pointer-events: none
+	height: 0
+	overflow: hidden
+	&.active
+		height: 100%
+		overflow: visible
+		opacity: 1
+		position: relative
+		pointer-events: initial
+.modalItemVivienda,
+.modalItemTrabajo,
+.modalItemMovilidad,
+.modalItemFinalizar
+	.modalSubBody
+		+mediaMin641
+			min-height: 350px
+			width: 100%
+			max-height: calc(64vh - 10px
+			height: auto
+		+mediaMax640
+			height: calc(var(--vh, 1vh) * 70)
+		
+.modalItemVivienda
+	width: 100%
+	position: absolute
+	left: 0
+	top: 0
+	opacity: 0
+	pointer-events: none
+	height: 0
+	overflow: hidden
+	&.active
+		height: calc(var(--vh, 1vh) * 100)
+		overflow: visible
+		opacity: 1
+		position: relative
+		pointer-events: initial
+.modalItemTrabajo
+	width: 100%
+	position: absolute
+	left: 0
+	top: 0
+	opacity: 0
+	pointer-events: none
+	height: 0
+	overflow: hidden
+	&.active
+		height: calc(var(--vh, 1vh) * 100)
+		overflow: visible
+		opacity: 1
+		position: relative
+		pointer-events: initial
+.modalItemMovilidad
+	width: 100%
+	position: absolute
+	left: 0
+	top: 0
+	opacity: 0
+	pointer-events: none
+	height: 0
+	overflow: hidden
+	&.active
+		height: calc(var(--vh, 1vh) * 100)
+		overflow: visible
+		opacity: 1
+		position: relative
+		pointer-events: initial
+.modalItemFinalizar
+	width: 100%
+	position: absolute
+	left: 0
+	top: 0
+	opacity: 0
+	pointer-events: none
+	height: 0
+	overflow: hidden
+	&.active
+		height: 100%
+		overflow: visible
+		opacity: 1
+		position: relative
+		pointer-events: initial
+.modalWrappForm
+	width: 100%
+
+.formControl
+	width: 100%
+	+flex
+	+flexWrap(wrap)
+.formItem
+	width: 50%
+	+bx
+	.contCheckRadio
+		font-size: 14px
+	.contCheckRadio.radio label:before
+		margin-right: 10px
+	&.formItem100
+		width: 100%
+.titleLabel
+	color: $colorDarkGray
+.formHide
+	display: none
+	width: 100%
+	background: $colorLigthGray
+	padding: 10px
+	border-radius: 10px
+	margin-bottom: 10px
+	+bx
+	input[type="text"]
+		font-size: 14px !important
+.modalRow
+	width: 100%
+	margin-bottom: 20px
+	border-bottom: 1px solid $colorDarkGray
+	&:last-child
+		margin-bottom: 0
+		border-bottom: 0
+.modalSubBody
+	overflow-y: auto
+	height: 350px
+	width: 100%
+	+mediaMax640
+		height: 300px
+.stepFollow
+	+flex
+	+flexWrap(wrap)
+	margin-bottom: 10px
+	*
+		+flex
+		background: $colorLigthGray2
+		width: 33%
+		text-align: center
+		align-items: center
+		justify-content: center
+		line-height: 20px
+		font-size: 14px
+		padding: 10px
+		box-sizing: border-box
+		+mediaMax640
+			padding: 0
+		&.active
+			background: $colorBlue
+			color: #fff
+.formControl
+	label 
+		font-size: 14px
+	input[type="text"]
+		font-size: 14px !important
+
+.modalCuestionaro
+	.contentModal
+		max-width: 768px
+		width: 100%
+	.contCheckRadio.radio label:before
+		border: 2px solid $colorBlue
+	&.modalView.modalCenter
+		.contentModal
+			+mediaMax640
+				width: 100%
+				max-height: 100%
+				height: 100%
+				align-items: center
+				border-radius: 0
+				overflow: hidden
+				+flex
+				+flexWrap(wrap)
+
+.modalFooter
+	.btn
+		max-width: 300px
+		margin: 0 auto
+		display: block
+	&.modalBtnTwice
+		+flex
+		+flexWrap(wrap)
+		.btn
+			max-width: 50%
+			width: 50%
+		+mediaMax640
+			.btn
+				padding: 0
+				height: 60px
+
+.modalAlert
+	position: absolute
+	left: -100%
+	opacity: 0
+	top: 0
+	width: 100%
+	height: 100%
+	background: #fff
+	padding: 20px
+	z-index: 10
+	align-items: center
+	transition: .4s all ease-in-out
+	+bx
+	+flexWrap(wrap)
+	+flex
+	&.active
+		left: 0
+		opacity: 1
+	.btn
+		max-width: 300px
+		margin: 0 auto
+		display: block

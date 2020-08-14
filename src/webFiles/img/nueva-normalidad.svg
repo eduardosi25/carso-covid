@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="79px" height="89px" viewBox="0 0 79 89" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Pantalla_home_retorno</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Pantalla_home_retorno" fill="#0093FF" fill-rule="nonzero">
+            <path d="M0.88,74.03 C0.88,58.17 0.88,42.88 0.88,27.62 C9.83,25.27 19.16,28.62 39.92,41.56 C60.1,28.59 67.4,25.88 78.76,27.29 C78.83,28.2 78.98,29.16 78.98,30.13 C79,44.6 79,59.07 79,74.04 C64.72,74.31 52.48,79.17 41.76,88.07 C40.92,88.76 38.41,88.62 37.51,87.87 C27.03,79.1 15.02,74.47 0.88,74.03 Z" id="Path"></path>
+            <path d="M39.85,0.729986386 C47.59,0.74 53.11,6.13 53.16,13.71 C53.21,21.22 47.62,26.83 40,26.92 C32.38,27.02 26.17,20.99 26.26,13.57 C26.33,6.22 32.16,0.72 39.85,0.729986386 Z" id="Path"></path>
+        </g>
+    </g>
+</svg>

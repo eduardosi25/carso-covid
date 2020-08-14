@@ -19,7 +19,6 @@
 		+flexDir(column)
 		+alignItem(center)
 		padding: 20px 0
-		margin: 0 10px
 		cursor: pointer
 		cursor: pointer
 		font-size: 14px
@@ -72,6 +71,18 @@
 				width: 30px 
 				height: 30px
 				margin-bottom: 5px
+	
+		&.historialNavBar
+			&:before
+				content: ""
+				display: inline-block
+				background:
+					image: url(../img/historial-inactive.svg)
+					size: contain
+					repeat: no-repeat
+				width: 30px 
+				height: 30px
+				margin-bottom: 5px
 
 		&.active
 			color: $colorBlue
@@ -97,7 +108,12 @@
 					content: ""
 					background-image: url(../img/perfil-active.svg)!important
 					margin-bottom: 5px
-
+			
+			&.historialNavBar
+				&:before
+					content: ""
+					background-image: url(../img/historial-active.svg)!important
+					margin-bottom: 5px
 
 header
 	.navBar
@@ -129,6 +145,9 @@ header
 			&.userProfileNavBar
 				&:before
 					content: none
+			&.historialNavBar
+				&:before
+					content: none
 
 			&.active
 				color: $colorBlue
@@ -142,6 +161,9 @@ header
 					&:before
 						content: none
 				&.userProfileNavBar
+					&:before
+						content: none
+				&.historialNavBar
 					&:before
 						content: none
 

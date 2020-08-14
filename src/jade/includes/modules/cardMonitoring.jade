@@ -6,11 +6,14 @@
 		.fieldset
 			label  *Registra tu temperatura
 			+select('selecTemp', 'Selecciona una opción' , arrayTemp)
+
+		.fieldset 
+			+inputField('Oximetría' ,'text', 'Ingresa un valor entre 60 y 100', 'idOximetry')
 		
 		.fieldset
 			label  *¿Tienes dificultad para respirar ?
 			.forTwo.w50.problemsBreathe
-				+radioButton('Si', 'breatheProblem', '7', '7')
+				+radioButton('Sí', 'breatheProblem', '7', '7')
 				+radioButton('No', 'breatheProblem', '0', '8' )
 			.errorMessage
 
@@ -38,26 +41,26 @@
 
 .form.FormLast.hidden
 	.card.monitoring
-		.fieldset
-			label *¿Estas en aislamiento/cuarentena/home office?
+		.fieldset.hidden
+			label * Indica el estatus de aislamiento/trabajo/home office
 			.forTwo.isolation
-				.btn.secundario Si
+				.btn.secundario Sí
 				.btn.secundario No
 			.errorMessage
 
 
-		.contMonitoringIsolation.hidden
-			.fieldset
+		.contMonitoringIsolation
+			.fieldset.hidden
 				.forTwo.whereIsolation
 					+radioButton('En casa', 'whereIsolation', '1', '1')
 					+radioButton('En el hospital', 'whereIsolation', '2', '2')
 				.errorMessage
 
 			.fieldset
-				label  *¿Porqué?
+				label  * Indica el estatus de aislamiento/trabajo/home office
 				+select('whyIsolation', 'Selecciona una opción' , arrayWhere)
 
-			.fieldset
+			.fieldset.hidden
 				label *Fecha de inicio de aislamiento
 				+inputDate('dateFirstIsolation', 'DD-MM-AAAA', '2019-01-01')
 
@@ -73,7 +76,7 @@
 .card.thanksMonitoringCaseOne.hidden
 
 	.fieldset
-		.h1  Gracias por tu tiempo
+		.h1#agradecimiento
 
 	.fieldset
 		p  ¡Te esperamos todos los días!

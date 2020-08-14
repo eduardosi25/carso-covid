@@ -1,0 +1,32 @@
+-var location = "Thank You Page"
+-var subLoc = ""
+-var titulo = "Monitoreo Fundacion Carlos Slim / Resultados"
+-var descrip = ""
+-var keyword = ""
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	include includes/tagGTM
+	body
+		include includes/modules/loaderPrincipal
+		include includes/headerManaged
+		
+		main.backgroundDark
+			div.container
+				section.thanYouPage.sectionPadding
+					.card
+						p.h4#agradecimiento
+
+						include includes/modules/thankYouResult
+
+						section.sectionFooter
+							a(href="mailto:soporte@desarrollofcs.mx") soporte@desarrollofcs.mx
+							button.btn.primario.goHome Regresar al inicio
+				section.sectionFooter2#policies
+					a(href="privacyPolicies.html") Políticas de privacidad
+		include includes/navBar
+		include includes/scriptsCss  

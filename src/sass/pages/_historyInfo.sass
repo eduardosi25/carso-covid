@@ -1,0 +1,83 @@
+.filterSection
+	background: $colorLigthGray2
+	+flex
+	flex-wrap: wrap
+	> *
+		width: 50%
+		+bx
+	select
+		border: 0
+		background: transparent
+		font-size: 14px !important
+		padding: 10px
+		height: 40px
+		position: relative
+.filterSelectDate
+	position: relative
+	p
+		line-height: 40px
+		font-size: 14px
+		padding: 0 10px
+		margin: 0
+		+bx
+.filterSelectType
+	position: relative
+	border-left: 1px solid $colorGray
+	&:after
+		content: ''
+		position: absolute
+		pointer-events: none
+		top: 0px
+		right: 0px
+		width: 30px
+		height: 100%
+		background:
+			image: url(../img/filter.svg)
+			size: 13px
+			repeat: no-repeat	
+			position: center
+		background-color: $colorLigthGray2
+.historyList
+	background: #fff
+.historyItem
+	+flex
+	flex-wrap: wrap
+	border-bottom: 1px solid $colorGray
+	padding-bottom: 20px
+	padding-top: 20px
+	padding-left: 15px
+	padding-right: 15px
+	> *
+		width: 50%
+	&:last-child
+		border-bottom: 0
+.historyName
+	.h5
+		font-weight: bold
+	p
+		font-size: 14px
+.sintomsInfo 
+	background: $colorGray
+	display: inline 
+	border-radius: 5px 
+	padding: 3px
+	&.con-sintoma
+		background: $error2
+		color: $error
+.sintomsAction
+	font-weight: bold
+.sintomsNewDate 
+	align-items: center
+	justify-content: center
+	height: 100%
+	font-size: 14px
+	+flex
+	flex-wrap: wrap
+	span 
+		display: block
+		width: 100%
+		text-align: center
+		margin: 0
+		padding: 0
+.historyHour
+	color: $colorDarkGray 

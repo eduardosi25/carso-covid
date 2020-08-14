@@ -1,0 +1,58 @@
+.cintilloUpdate
+	background: $colorBlue
+	color: #fff
+	display: none
+	position: relative
+	margin-bottom: 20px
+	.container
+		align-items: center
+		height: 100px
+		+flex
+		+flexWrap(wrap)
+	+mediaMax640
+		p
+			text-align: left
+			font-size: 14px
+			text-transform: uppercase
+		.contbtnApp
+			justify-content: start
+	&.hideCookies
+		display: none !important
+	.contbtnApp
+		+flex
+		+flexDir(row)
+		margin-top: 10px
+		+mediaMax960
+			+flexDir(column)
+		+mediaMax780
+			+flexDir(row)
+	
+	.downloadAndroid,
+	.downloadIos
+		width: 135px
+		height: 41px
+		cursor: pointer
+		margin: 0 10px
+		+mediaMax960
+			margin: 5px 0
+		+mediaMax780
+			margin: 0 5px
+	.cerrarBtnLine
+		width: 20px
+		height: 20px
+		position: absolute
+		top: 10px
+		right: 10px
+		cursor: pointer
+		z-index: 10
+.cintilloInfo
+	width: 70%
+	padding-left: 30px
+.updateDownload
+	background: transparent
+	border: 1px solid #fff
+	color: #fff
+	text-decoration: none
+	padding: 5px 10px
+	text-align: center
+	width: 80%

@@ -1,0 +1,44 @@
+-var location = "historyInfo"
+-var subLoc = ""
+-var titulo = "Monitoreo Fundacion Carlos Slim / Historial"
+-var descrip = ""
+-var keyword = ""
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	include includes/tagGTM
+	body
+		include includes/modules/loaderPrincipal
+		include includes/headerManaged
+		
+		main.backgroundDark
+			div.container
+				.countDataUser.p-30
+					p.h4 Mi historial
+					p.userID
+			div.filterSection
+				div.filterSelectDate
+					p Seguimiento
+				div.filterSelectType
+					+select('selectFilterHistory', 'Selecciona una opción', arrayHistoryFilter)
+					p.filterHistory.hidden
+			div.historyList
+				div.historyItems.hidden
+					div.historyItem
+						div.historyName
+							p.h5 {user_name}
+							p Temperatura: {temperature}º
+							.div-
+							p.sintomsInfo {symptoms}
+							p.sintomsAction Aislamiento: {quarantine}
+						article.historyDate
+							div.sintomsNewDate
+								p
+									span {date}
+									span.historyHour Hora: {time}
+		include includes/navBar
+		include includes/scriptsCss

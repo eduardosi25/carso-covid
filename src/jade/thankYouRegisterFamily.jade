@@ -1,0 +1,29 @@
+-var location = "Thank You Page Family"
+-var subLoc = ""
+-var titulo = "Monitoreo Fundacion Carlos Slim / Registro de familiar"
+-var descrip = ""
+-var keyword = ""
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	include includes/tagGTM
+	body
+		include includes/modules/loaderPrincipal
+		include includes/headerManaged
+		
+		main.backgroundDark
+			div.container
+				section.thanYouPage.sectionPadding
+					.card
+						p.h4.text-center ¡Tu familiar ha sido registrado!
+						div.col-div.text-center.m-40
+							.ico.icoFamily.mb-30(style="margin: 20px auto;")
+							p Envía el correo y contraseña con el que lo has registrado para que pueda ingresar a realizar su monitoreo diario
+						section.sectionFooter
+							button.btn.primario.goProfile Regresar a mi perfil
+		include includes/navBar
+		include includes/scriptsCss

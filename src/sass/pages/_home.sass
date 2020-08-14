@@ -3,13 +3,19 @@
 	background:
 		image: url(../img/medicos.png) 
 		size: cover
-	.logoCarso
+	.logoCarso,
 		width: 200px
 		height: 50px
 		display: block
 		+mediaMax780
 			margin: auto
-
+	.logoMonitorColor
+	.logoMonitorWhite
+		width: 200px
+		height: 100px
+		display: block
+		+mediaMax780
+			margin: auto
 	.container
 		+bx
 		padding: 40px 15px
@@ -83,20 +89,21 @@
 				display: none
 			.h1
 				font-size: 75px
-				padding: 70px 20px 25px 15px
+				padding: 70px 20px 25px 0
 				font-weight: 600
+				line-height: 70px
 				+mediaMax960
 					font-size: 65px
-					padding: 70px 15px 15px
+					padding: 70px 15px 15px 0
 				+mediaMax780
 					font-size: 30px
-					padding: 10px 15px 5px
+					padding: 10px 0 5px
 
 			.h2
-				font-size: 30px
-				padding: 20px
+				font-size: 24px
+				padding: 20px 20px 20px 0
 				font-weight: 400
-				line-height: 1.2
+				line-height: 35px
 				max-width: 600px
 				+mediaMax960
 					font-size: 28px
@@ -147,13 +154,28 @@
 		padding: 20px 0 40px
 	+mediaMax780
 		padding: 20px 0 40px
-
+	&.homeGeneral
+		border-top: 5px solid $colorGray
 	ul
 		li
 			padding: 30px 20px
 			background: $colorWhite
 			margin-bottom: 20px
 			line-height: 1.3
+			ol 
+				list-style: circle
+				padding-left: 30px
+				padding-top: 30px
+				li	
+					padding: 10px
+					margin-bottom: 0
+					ul
+						list-style: decimal
+						padding-left: 30px
+						padding-top: 30px
+						li 
+							padding: 10px
+							margin-bottom: 0
 
 
 	.washHandsContent
@@ -161,7 +183,7 @@
 		padding: 10px 0 40px
 		margin-bottom: 20px
 		width: 100%
-		border-bottom: 1px solid $colorDarkGray
+		//border-bottom: 1px solid $colorDarkGray
 		.container
 			+flex
 			+flexDir(row)
@@ -172,7 +194,8 @@
 		+mediaMax780
 			margin-bottom: 0
 
-	.icoWashHands
+	.icoWashHands,
+	.icoPersonas
 		width: 100px
 		height: 100px
 		margin-left: 50px
@@ -215,3 +238,39 @@
 		text-align: center
 		color: $colorBlue
 		width: 100%
+
+.sectionPadding
+	padding: 30px 0
+.sectionFooter
+	text-align: center
+	padding: 20px 0
+	*
+		margin-bottom: 20px
+		display: block
+		&:last-child
+			margin-bottom: 0
+	a
+		color: $colorDarkGray
+.sectionFooter2
+	text-align: center
+	padding: 20px 0
+	*
+		margin-bottom: 20px
+		display: block
+		&:last-child
+			margin-bottom: 0
+	a
+		color: $colorDarkGray
+.mailto
+	text-align: center
+	padding: 20px 0
+	*
+		margin-bottom: 20px
+		display: block
+		&:last-child
+			margin-bottom: 0
+	a
+		color: $colorDarkGray
+.public,
+.private
+	width: 100%

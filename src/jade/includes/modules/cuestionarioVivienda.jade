@@ -1,0 +1,83 @@
+div.stepFollow
+	p.titleLabel.active Vivienda
+	p.titleLabel Condiciones laborales
+	p.titleLabel Movilidad
+
+
+div.modalSubBody#stepOne
+	//* Subitem
+	div.modalRow
+		div.modalHeader
+			p.h6#1
+		div.modalBody
+			div.forTwo.formControl.viviendaType.p-10
+				div.formItem
+					div.formInput
+						+radioButton('a1', 'vivienda', 'a1', '1')
+				div.formItem
+					div.formInput
+						+radioButton('a2', 'vivienda', 'a2', '2')
+			.errorMessage
+
+	//* Subitem
+	div.modalRow
+		div.modalHeader
+			p.h6#2
+		div.modalBody
+			div.forTwo.formControl.posiblesType.p-10
+				div.formItem
+					div.formInput
+						+radioButton('a3', 'posibles', 'a3', '3')
+				div.formItem
+					div.formInput
+						+radioButton('a4', 'posibles', 'a4', '4')
+			.errorMessage
+			div.formHide.posiblesReg#3
+					.fieldset
+						+inputField('Especifique la profesión del familiar' ,'text', '', 'profesionReg')
+			.errorMessage
+	//* Subitem
+	div.modalRow
+		div.modalHeader
+			p.h6#4
+		div.modalBody
+			div.forTwo.formControl.sospechosoType.p-10
+				div.formItem
+					div.formInput
+						+radioButton('a5', 'casoSospechoso', 'a5', '5')
+				div.formItem
+					div.formInput
+						+radioButton('a6', 'casoSospechoso', 'a6', '6')
+			.errorMessage
+	//* Subitem
+	div.modalRow
+		div.modalHeader
+			p.h6#5
+		div.modalBody
+			div.forTwo.formControl.lavadoManos.p-10
+				div.formItem
+					div.formInput
+						+radioButton('a7', 'lavadoManos', 'a7', '7')
+				div.formItem
+					div.formInput
+						+radioButton('a8', 'lavadoManos', 'a8', '8')
+			.errorMessage
+	div.modalRow
+		div.modalHeader
+			p.h6#6
+		div.modalBody
+			div.forTwo.formControl.desinfectarFrec.p-10
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('a9', 'desinfectarCasa', 'a9', '9')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('a10', 'desinfectarCasa', 'a10', '10')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('a11', 'desinfectarCasa', 'a11', '11')
+			.errorMessage
+p.titleLabel.p-10 * Campos obligatorios
+div.modalFooter.modalBtnTwice
+	button.btn.simpleBtn.backToView.btnDisabled Regresar
+	button.btn.primario.nexToView.viviendaNext.mb-20 Siguiente

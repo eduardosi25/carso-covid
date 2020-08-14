@@ -1,6 +1,6 @@
 -var location = "info"
 -var subLoc = ""
--var titulo = "Monitoreo Fundacion Carlos Slim / FAQs"
+-var titulo = "Monitoreo Fundacion Carlos Slim / Info"
 -var descrip = ""
 -var keyword = ""
 
@@ -14,11 +14,10 @@ html(itemscope, itemtype="http://schema.org/WebPage")
 	body
 		include includes/modules/loaderPrincipal
 		include includes/headerManaged
-		
+			
 		main.backgroundDark
 			section.infoSection
-				.container.medium
-					.imagesFAQs
+				iframe(src='https://www.clikisalud.net/covid-19/', frameborder='0', target="_parent", class="iframeView")
 
 		include includes/navBar
 		include includes/scriptsCss

@@ -5,13 +5,16 @@
 -var keyword = ""
 
 include includes/mixines
-include includes/variables
+include includes/variables 
 
 doctype html
 html(itemscope, itemtype="http://schema.org/WebPage")
 	include includes/head
 	include includes/tagGTM
 	body
+		
+		include includes/modules/modalResult
+		include includes/modules/modalCuestionario
 		include includes/modules/loaderPrincipal
 		include includes/headerManaged
 		

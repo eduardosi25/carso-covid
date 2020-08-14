@@ -1,0 +1,40 @@
+-var location = "newNormal"
+-var subLoc = ""
+-var titulo = "Monitoreo Fundacion Carlos Slim / Nueva Normalidad"
+-var descrip = ""
+-var keyword = ""
+
+include includes/mixines
+include includes/variables
+
+doctype html
+html(itemscope, itemtype="http://schema.org/WebPage")
+	include includes/head
+	include includes/tagGTM
+	body
+		include includes/modules/loaderPrincipal
+		include includes/headerManaged
+		
+		main.backgroundDark
+			section.myAccountCards
+				.container
+					.countDataUser
+						p.h4 Retorno a la Nueva Normalidad
+
+					.countCardsSections
+				
+						a(href="https://aprende.org/tema/covid_nueva_normalidad" target="_blank").card.cardNewNormalLink.cardLink
+							.ico.icoNewNormalLink
+							p Curso Nueva Normalidad
+							.icoNext
+						a(href="https://carso.capacitateparaelempleo.org/index.php" target="_blank").card.cardExamenLink.cardLink
+							.ico.icoExamenLink
+							p Examen Nueva Normalidad
+							.icoNext
+						a(href="https://www.clikisalud.net/vuelve-seguro-al-trabajo/" target="_blank").card.cardTrabajoLink.cardLink
+							.ico.icoTrabajoLink
+							p Vuelve al trabajo seguro
+							.icoNext
+
+		include includes/navBar
+		include includes/scriptsCss

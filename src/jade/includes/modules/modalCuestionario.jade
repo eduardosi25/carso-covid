@@ -1,0 +1,27 @@
+section.modalView.modalCenter.modalCuestionaro
+	div.contentModal 
+		//span.modalClose
+		// Alert campos
+		div.modalAlert
+			div.modalHeader.text-center.mb-20
+				.ico.icoDanger.mb-10
+				p.h4#title-danger.mb-10 Falta información
+				p.titleLabel.mb-20 Por favor complete todos los campos de la encuesta
+				button.btn.primario.removeAlert Aceptar
+		section.modalWrapp
+			form.modalWrappForm
+				// Intro
+				div.modalItem.active
+					include cuestionarioIntro
+				//:: Vivienda
+				div.modalItemVivienda
+					include cuestionarioVivienda
+				//:: Condiciones laborales
+				div.modalItemTrabajo
+					include cuestionarioTrabajo
+				//:: Movilidad
+				div.modalItemMovilidad
+					include cuestionarioMovilidad
+				//:: Movilidad
+				div.modalItemFinalizar
+					include cuestionarioFinalizar

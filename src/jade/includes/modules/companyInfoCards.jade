@@ -1,0 +1,18 @@
+section.companyInfoCards
+	.container.medium
+		.FormCompInfoCards.countCardsSections
+			.card
+				p.h4 Información de empresas
+				.fieldset
+					+inputField('Grupo en el que laboras:' ,'text', '', 'selecGrupoReg')
+				.fieldset
+					label Empresa en la que laboras
+					+select('selecEmpresaReg', 'Selecciona una opción' , arrayBusiness)
+				.fieldset
+					label  Área en la que laboras
+					+select('selecAreaReg', 'Selecciona una opción' , arrayArea)
+
+			p.smallText *Campos obligatorios
+
+			.fieldset
+				button(type="button").btn.primario.middleCompanyInfoCards Continuar

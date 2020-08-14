@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="43px" height="38px" viewBox="0 0 43 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>FAMILY</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-5" transform="translate(-1055.000000, -808.000000)" stroke="#00D065" stroke-width="2">
+            <g id="Group-8-Copy-2" transform="translate(1041.000000, 789.000000)">
+                <g id="Group-28">
+                    <g id="FAMILY" transform="translate(15.000000, 20.000000)">
+                        <g id="Group-2-Copy">
+                            <g id="ico-family-green">
+                                <path d="M6,22 L6,33.4705882 C6,34.4901961 6.66666667,35 8,35 C9.33333333,35 10,34.4901961 10,33.4705882 L10,22" id="Path-2" stroke-linecap="round"></path>
+                                <path d="M2,22 L2,33.4705882 C2,34.4901961 2.66666667,35 4,35 C5.33333333,35 6,34.4901961 6,33.4705882 L6,22" id="Path-2-Copy" stroke-linecap="round"></path>
+                                <path d="M0,23.0869565 L0,12.1304348 C0,10.5652174 0.773584906,9.7826087 2.32075472,9.7826087 C3.86792453,9.7826087 6.18867925,9.7826087 9.28301887,9.7826087 C10.8301887,9.7826087 11.6037736,10.5652174 11.6037736,12.1304348 C11.6037736,14.4782609 11.6037736,16.826087 12.3773585,18.3913043 C13.1509434,19.9565217 14.6981132,23.0869565 20.1132075,23.0869565 C25.5283019,23.0869565 27.8490566,16.826087 27.8490566,16.0434783 C27.8490566,15.2608696 27.8490566,12.9130435 27.8490566,12.1304348 C27.8490566,11.3478261 28.6226415,9 30.9433962,9 C32.490566,9 34.8113208,9 37.9056604,9 C39.9685535,9 41,10.0434783 41,12.1304348 C41,14.2173913 41,17.8695652 41,23.0869565 L38.6792453,23.0869565 L38.6792453,27 L30.1698113,27 L30.1698113,23.0869565" id="Path-3" stroke-linecap="round"></path>
+                                <circle id="Oval" cx="21" cy="17" r="3"></circle>
+                                <circle id="Oval-Copy" cx="6" cy="3" r="3"></circle>
+                                <circle id="Oval-Copy-2" cx="34" cy="3" r="3"></circle>
+                                <line x1="36.5" y1="36" x2="36.5" y2="28" id="Path-4-Copy" stroke-linecap="round"></line>
+                                <line x1="32.5" y1="36" x2="32.5" y2="28" id="Path-4" stroke-linecap="round"></line>
+                                <path d="M18,26 C18,28.6666667 19,30 21,30 C23,30 24,28.6666667 24,26 L18,26 Z" id="Path-6" stroke-linecap="round"></path>
+                                <line x1="22.5" y1="30" x2="22.5" y2="35" id="Path-5" stroke-linecap="round"></line>
+                                <line x1="19" y1="30" x2="19" y2="35" id="Path-5-Copy" stroke-linecap="round"></line>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -4,12 +4,17 @@
 	padding-bottom: 20px
 	overflow: hidden
 	text-transform: capitalize
+	+mediaMax640
+		font-size: 24px
+		padding-bottom: 10px
 
 .userID
 	color: $colorDarkBlue
 	font-size: 20px
 	padding-bottom: 10px
 	overflow: hidden
+	+mediaMax640
+		font-size: 18px
 
 .incompleteProf
 	position: relative
@@ -34,7 +39,15 @@
 		background: $colorGray
 		width: 100%
 		padding: 20px
-
+		+mediaMax640
+			padding: 10px 20px
+			border-radius: 8px
+	&.active
+		padding-top: 0
+	&.activeCookies
+		padding-top: 60px
+		+mediaMax640
+			padding-top: 20px
 	.countCardsSections
 		+flex
 		+flexDir(row)
@@ -57,11 +70,10 @@
 			max-width: 300px
 			+mediaMax640
 				margin: 5px 20px 5px -5px
-		.icoRegisterActivities,
-		.icoClinicalProfile
+		.ico
 			+mediaMax640
-				width: 30px
-				height: 40px
+				width: 50px
+				height: 60px
 				display: block
 		.card
 			margin: 10px
@@ -78,6 +90,23 @@
 				+flexDir(row)
 				+justifyCont(flexStart)
 				+alignItem(center)
+				padding: 20px 30px
 
 		p
 			text-align: center
+	
+		.registerFamily
+			.icoFamily
+				+mediaMax640
+					width: 50px
+					height: 60px
+					display: block 
+	+mediaMax640
+		padding-top: 20px
+		padding-bottom: 20px
+		.countCardsSections 
+			margin-top: 10px
+
+.cardLink
+	text-decoration: none
+	color: #000

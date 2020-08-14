@@ -16,10 +16,13 @@
 		list-style: disc
 		list-style-position: inside
 		padding: 0 50px
+		+mediaMax640
+			padding: 0 30px
 		li
 			+bx
 			padding: 5px 0
-
+		&.listIconCheck
+			list-style: none
 
 	.h1
 		margin-top: 20px
@@ -28,10 +31,12 @@
 	.h1, .h2, .h3
 		+bx
 		padding: 20px 0
+		+mediaMax640
+			line-height: 32px
 
 	.container
 		max-width: 1000px
-
+	
 
 	table,
 	thead,
@@ -87,3 +92,24 @@
 					+flex
 					+flexDir(column)
 
+.textUnderline
+	text-decoration: underline
+
+.h4,
+h4
+	line-height: 35px
+
+.fieldsetChecked
+	pointer-events: none
+
+.listIconCheck
+	list-style: none
+	li
+		position: relative
+		&:before
+			content: '✓'
+			position: absolute
+			left: -20px
+
+.linkSimple
+	color: $colorBlue

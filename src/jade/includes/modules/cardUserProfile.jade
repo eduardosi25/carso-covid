@@ -21,18 +21,34 @@ section.myUserCards
 					span
 
 
-			.card.employData.hidden
+			.card.employData.hidden.cardWithButton
+				p.dataGroup Grupo:
+					span
 				p.dataArea Área:
 					span
 				p.dataEmploye Empresa:
 					span
-
+				a(href="companyInfo.html").btn.secundarioV2.edit Editar
 
 			.card.clinicalProfile
 				.ico.icoClinicalProfile
 				p Mi perfil clínico
 				.icoNext
+			
+			.card.newNormal
+				.ico.icoNewNormal
+				p Retorno a la Nueva Normalidad
+				.icoNext
 
+			.card.registerFamily
+				.ico.icoFamily
+				p Registra a un familiar
+				.icoNext.green
+			
+			div.versionText
+				p V6.4.0
 
 		.container.contButton
 			.btn.secundario.logOutNavBar  Cerrar Sesión
+
+		

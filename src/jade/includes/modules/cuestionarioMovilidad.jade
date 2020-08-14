@@ -1,0 +1,92 @@
+div.stepFollow
+	p.titleLabel Vivienda
+	p.titleLabel Condiciones laborales
+	p.titleLabel.active Movilidad
+div.modalSubBody
+	//* Subitem
+	div.modalRow
+		div.modalHeader
+			p.h6#16
+		div.modalBody
+			div.forTwo.formControl.vehType
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('c33', 'transporte', 'c33', '33')
+				div.formHide.partType
+					p.h6#17
+					p.titleLabel
+					div.forTwo.formControl.shareType.p-10
+						div.formItem
+							div.formInput
+								+radioButton('c34', 'vehiculoComp', 'c34', '34')
+						div.formItem
+							div.formInput
+								+radioButton('c35', 'vehiculoComp', 'c35', '35')
+					.errorMessage
+
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('c36', 'transporte', 'c36', '36')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('c37', 'transporte', 'c37', '37')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('c38', 'transporte', 'c38', '38')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('c39', 'transporte', 'c39', '39')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('c40', 'transporte', 'c40', '40')
+		
+
+
+			div.formHide.publicType
+					p.h6#18
+					p.titleLabel
+					div.forTwo.formControl.pubType.p-10
+						div.formItem.formItem100
+							div.formInput
+								+checkbox('c41', 'transporteLista', '41')
+							div.formInput
+								+checkbox('c42', 'transporteListb', '42')
+							div.formInput
+								+checkbox('c43', 'transporteListc', '43')
+							div.formInput
+								+checkbox('c44', 'transporteListd', '44')
+							div.formInput
+								+checkbox('c45', 'transporteListe', '45')
+					.errorMessage
+	//* Subitem
+	div.modalRow
+		div.modalHeader
+			p.h6#19
+		div.modalBody		
+			div.forTwo.formControl.tiempoType.p-10
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('c46', 'transporteTiempo', 'c46', '46')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('c47', 'transporteTiempo', 'c47', '47')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('c48', 'transporteTiempo', 'c48', '48')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('c49', 'transporteTiempo', 'c49', '49')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('c50', 'transporteTiempo', 'c50', '50')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('c51', 'transporteTiempo', 'c51', '51')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('c52', 'transporteTiempo', 'c52', '52')
+			.errorMessage
+p.titleLabel.p-10 * Campos obligatorios
+div.modalFooter.modalBtnTwice
+	button.btn.simpleBtn.backToView.movilidadBack Regresar
+	button.btn.primario.nexToView.movilidadNext.mb-20 Finalizar

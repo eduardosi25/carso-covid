@@ -36,7 +36,7 @@
 	top: 0
 	left: 0
 	z-index: 10000
-	.contentModal
+	.contentModal 
 		+center(vh)
 		position: relative
 		width: 100%
@@ -47,8 +47,52 @@
 		right: 15px
 		cursor: pointer
 		font-weight: 500
-
-
+	&.modalCenter
+		background: rgba(36, 43, 47, 0.84)
+		display: none
+		.contentModal
+			width: 90%
+			background: #fff
+			border-radius: 10px
+			padding: 20px 15px
+			max-height: 90vh
+			height: auto
+			overflow-y: auto
+			+bx
+			.resultCard
+				border: 0
+				padding: 0
+		.modalClose
+			background-image: url(../img/close-line.svg)
+			background-repeat: no-repeat
+			background-size: cover
+			width: 20px
+			height: 20px
+			top: 20px
+		// * Azul
+		&[data-risk="10"]
+			.contentModal
+				border-top: 19px solid $scoreOne
+		// * Azul
+		&[data-risk="11"],
+		&[data-risk="20"],
+		&[data-risk="30"],
+			.contentModal
+				border-top: 19px solid $scoreTwo
+		// : Amarillo
+		&[data-risk="12"],
+		&[data-risk="21"],
+		&[data-risk="22"],
+		&[data-risk="31"],
+			.contentModal
+				border-top: 19px solid $scoreThree	
+		// + Rojo	
+		&[data-risk="13"],
+		&[data-risk="23"],
+		&[data-risk="32"],
+		&[data-risk="33"],
+			.contentModal
+				border-top: 19px solid $scoreFour
 .toast
 	+bx
 	position: fixed

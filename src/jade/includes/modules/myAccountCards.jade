@@ -1,8 +1,20 @@
 section.myAccountCards
+	include cintilloAPPUpdate
 	.container
 		.countDataUser
 			p.userName
 			p.userID
+			.statusScore
+				.scoreInfo
+					include scoreModule
+				.scoreCopy
+					dl
+						p.scoreTitle Tu condición de salud es:
+					dl
+						p
+							strong.label_basal &nbsp;
+					dl
+						a.openModal(href="#") ¿Qué hacer?
 
 		.countCardsSections
 			
@@ -15,3 +27,13 @@ section.myAccountCards
 				.ico.icoClinicalProfile
 				p Mi perfil clínico
 				.icoNext
+
+			.card.newNormal
+				.ico.icoNewNormal
+				p Retorno a la nueva normalidad
+				.icoNext
+				
+			.card.registerFamily
+				.ico.icoFamily
+				p Registra a un familiar
+				.icoNext.green

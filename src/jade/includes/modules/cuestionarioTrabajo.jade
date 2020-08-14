@@ -1,0 +1,130 @@
+div.stepFollow
+	p.titleLabel Vivienda
+	p.titleLabel.active Condiciones laborales
+	p.titleLabel Movilidad
+div.modalSubBody
+	//* Subitem
+	div.modalRow
+		div.modalHeader
+			p.h6#7
+		div.modalBody
+			div.forTwo.formControl.actividadType
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('b12', 'instalaciones', 'b12', '12')
+				div.formHide.propiasType#8
+					p.titleLabel
+					div.forTwo.formControl.propiaType
+						div.formItem.formItem100
+							div.formInput
+								+radioButton('b13', 'instalacionesInner', 'b13', '13')
+						div.formItem.formItem100
+							div.formInput
+								+radioButton('b14', 'instalacionesInner', 'b14', '14')
+						div.formItem.formItem100
+							div.formInput
+								+radioButton('b15', 'instalacionesInner', 'b15', '15')
+						div.formItem.formItem100
+							div.formInput
+								+radioButton('b16', 'instalacionesInner', 'b16', '16')
+						div.formItem.formItem100
+							div.formInput
+								+radioButton('b17', 'instalacionesInner', 'b17', '17')
+						div.formItem.formItem100
+							div.formInput
+								+radioButton('b18', 'instalacionesInner', 'b18', '18')
+						div.formItem.formItem100
+							div.formInput
+								+radioButton('b19', 'instalacionesInner', 'b19', '19')
+						div.formItem.formItem100
+							div.formInput
+								+radioButton('b20', 'instalacionesInner', 'b20', '20')
+					.errorMessage
+					div.formHide.otrosType#9
+						.fieldset
+							+inputField('Colocar el nombre de la empresa *' ,'text', 'Cliente', 'instalacionesClienteReg')
+					.errorMessage
+
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('b21', 'instalaciones', 'b21', '21')
+			.errorMessage
+			
+			div.formHide.clienteType#10
+						.fieldset
+							+inputField('Otras instalaciones *' ,'text', '', 'instaReg')
+			.errorMessage
+
+
+	//* Subitem
+	div.modalRow
+		div.modalHeader
+			p.h6#11
+		div.modalBody
+			div.forTwo.formControl.temporalType.p-10
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('b22', 'temporalSite', 'b22', '22')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('b23', 'temporalSite', 'b23', '23')
+			.errorMessage
+	//* Subitem
+	div.modalRow
+		div.modalHeader
+			p.h6#12
+		div.modalBody
+			div.formControl.postalNumber.p-10
+				.fieldset
+					+inputField('Ingresa tu código postal' ,'text', '', 'codigoPostalReg')
+			.errorMessage
+	//* Subitem
+	div.modalRow
+		div.modalHeader
+			p.h6#13
+		div.modalBody
+			div.forTwo.formControl.actividadLaboralType.p-10
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('b24', 'actividadLaboral', 'b24', '24')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('b25', 'actividadLaboral', 'b25', '25')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('b26', 'actividadLaboral', 'b26', '26')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('b27', 'actividadLaboral', 'b27', '27')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('b28', 'actividadLaboral', 'b28', '28')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('b29', 'actividadLaboral', 'b29', '29')
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('b30', 'actividadLaboral', 'b30', '30')
+			.errorMessage
+	//* Subitem
+	div.modalRow
+		div.modalHeader
+			p.h6#14
+		div.modalBody
+			div.forTwo.formControl.supervisorType.p-10
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('b31', 'supervisorRH', 'b31', '31')
+				p.titleLabel
+				div.formItem.formItem100
+					div.formInput
+						+radioButton('b32', 'supervisorRH', 'b32', '32')
+			.errorMessage
+			div.formHide.supervisorName#15
+					.fieldset
+						+inputField('¿Quién es? *' ,'text', 'Nombre completo', 'supervisorReg')
+			.errorMessage
+p.titleLabel.p-10 * Campos obligatorios					
+div.modalFooter.modalBtnTwice
+	button.btn.simpleBtn.backToView.trabajoBack Regresar
+	button.btn.primario.nexToView.trabajoNext.mb-20 Siguiente

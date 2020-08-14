@@ -115,3 +115,19 @@
 .registryFamilyModule
 	.titleStep
 		letter-spacing: 1.15px
+
+.fieldDouble
+	+flex
+	+flexWrap(wrap)
+	+flexDir(row)
+	justify-content: center
+	align-items: center
+	+mediaMax640
+		justify-content: left
+	.checkbox
+		width: 40px
+	p
+		width: 80%
+		padding-left: 10px
+	a
+		color: $colorBlue
