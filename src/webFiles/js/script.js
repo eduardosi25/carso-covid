@@ -5184,7 +5184,8 @@ $(document).ready(function() {
      */
     var assignRiskGroupAllocation = function(risk) {
         var company = getStorage64('dataCompanyCont')
-        if (company !== "null") {
+        var loginIn = getStorage64('userLoginSession')
+        if (loginIn == "true") {
             var telefonoContact = company.grupo.telefono
             var correoContact = company.grupo.correo
             console.log("compañia", company)
@@ -5223,7 +5224,7 @@ $(document).ready(function() {
         $(".label_basal").html(element.text);
         $(".label_basal").addClass("active");
 
-        if (company !== "null") {
+        if (company !== 'null' || company !== null || company !== undefined || company !== '') {
             $(".resultWrapp").addClass("hidden");
             $(".resultWrapp." + element.class).data('risk', element.points).attr('data-risk', element.points).removeClass("hidden");
             $(".numberPhone").text(telefonoContact);
