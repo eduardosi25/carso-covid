@@ -20,6 +20,14 @@ steps:
     npm install
   displayName: 'npm install'
 - script: |
+      sed -i 's/@apiEndpoint@/$(APIENDPOINTDE)/g' src/webFiles/js/script.js
+  displayName: 'bake script.js (debug)'
+  condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master'))
+- script: |
+      sed -i 's/@apiEndpoint@/$(APIENDPOINTPE)/g' src/webFiles/js/script.js
+  displayName: 'bake script.js (release)'
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+- script: |
     gulp
   displayName: 'gulp'
 - script: |
@@ -49,11 +57,11 @@ steps:
       $(webLibraryVersion)-$(releaseConfig)
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
 - script: |
-    sed 's/@version/$(webLibraryVersion)-$(debugConfig)/g' k8s-deployment-manifest.yml.tmplt > k8s-deployment-manifest.yml
+    sed 's/@version@/$(webLibraryVersion)-$(debugConfig)/g;s/@acr@/$(ACRDE)/g;s/@environment@/de/g' k8s-deployment-manifest.yml.tmplt > k8s-deployment-manifest.yml
   displayName: 'bake manifest (debug)'
   condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master'))
 - script: |
-    sed 's/@version/$(webLibraryVersion)/g' k8s-deployment-manifest.yml.tmplt > k8s-deployment-manifest.yml
+    sed 's/@version@/$(webLibraryVersion)/g;s/@acr@/$(ACRPE)/g;s/@environment@/pe/g' k8s-deployment-manifest.yml.tmplt > k8s-deployment-manifest.yml
   displayName: 'bake manifest (release)'
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
 - task: PublishBuildArtifacts@1

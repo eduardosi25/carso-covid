@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: monitor-portal
+  name: monitor-portal-@environment@
   labels:
-    app: monitor-portal
+    app: monitor-portal-@environment@
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: monitor-portal
+      app: monitor-portal-@environment@
   template:
     metadata: 
       labels:
-        app: monitor-portal
+        app: monitor-portal-@environment@
     spec:
       containers:
-      - name: monitor-portal
+      - name: monitor-portal-@environment@
         imagePullPolicy: Always
-        image: ghmonitor019de6.azurecr.io/portal:@version
+        image: @acr@/portal:@version@
         ports:
         - containerPort: 80
 ---
@@ -25,12 +25,12 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    service.beta.kubernetes.io/azure-dns-label-name: monitor-portal
-  name: monitor-portal
+    service.beta.kubernetes.io/azure-dns-label-name: monitor-portal-@environment@
+  name: monitor-portal-@environment@
 spec:
   type: LoadBalancer
   selector:
-    app: monitor-portal
+    app: monitor-portal-@environment@
   ports:
     - protocol: TCP
       port: 80

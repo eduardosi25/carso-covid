@@ -9,7 +9,7 @@ $(document).ready(function() {
     $('.card.newNormal').hide()
         //$('#agradecimiento').text("Gracias")
 
-    const BASE_API = 'http://monitor-backend.southcentralus.cloudapp.azure.com/';
+    const BASE_API = '@apiEndpoint@';
 
     /*  Variables */
 
