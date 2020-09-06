@@ -1,8 +1,5 @@
 trigger:
 - master
-- features/*
-- fixes/*
-- improvements/*
 
 pool:
   vmImage: 'ubuntu-18.04'
@@ -47,7 +44,7 @@ steps:
 - task: Docker@2
   displayName: 'Build & Push an image (release)'
   inputs:
-    containerRegistry: ghmonitor014429
+    containerRegistry: ghmonitor016074
     repository: portal
     Dockerfile: Dockerfile
     tags: |
@@ -57,11 +54,15 @@ steps:
       $(webLibraryVersion)-$(releaseConfig)
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
 - script: |
-    sed 's/@version@/$(webLibraryVersion)-$(debugConfig)/g;s/@acr@/$(ACRDE)/g;s/@environment@/de/g' k8s-deployment-manifest.yml.tmplt > k8s-deployment-manifest.yml
+    sed -i 's/@version@/$(webLibraryVersion)-$(debugConfig)/g' k8s-deployment-manifest.yml
+    sed -i 's/@acr@/$(ACRDE)/g' k8s-deployment-manifest.yml
+    sed -i 's/@environment@/de/g' k8s-deployment-manifest.yml
   displayName: 'bake manifest (debug)'
   condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master'))
 - script: |
-    sed 's/@version@/$(webLibraryVersion)/g;s/@acr@/$(ACRPE)/g;s/@environment@/pe/g' k8s-deployment-manifest.yml.tmplt > k8s-deployment-manifest.yml
+    sed -i 's/@version@/$(webLibraryVersion)/g' k8s-deployment-manifest.yml
+    sed -i 's/@acr@/$(ACRPE)/g' k8s-deployment-manifest.yml
+    sed -i 's/@environment@/pe/g' k8s-deployment-manifest.yml
   displayName: 'bake manifest (release)'
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
 - task: PublishBuildArtifacts@1
