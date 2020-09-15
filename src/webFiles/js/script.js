@@ -3,13 +3,13 @@ $(document).ready(function() {
     /*  
     const BASE_API = 'https://api-rc1.fcs-monitoreo.com/';
     const BASE_API = 'https://api.fcs-monitoreo.com/';
-    const BASE_API = 'https://api.dev.covid19-carso.com/';
     */
     $('.card.registerFamily').hide()
     $('.card.newNormal').hide()
+    $('.card.employData').hide();
         //$('#agradecimiento').text("Gracias")
 
-    const BASE_API = '@apiEndpoint@';
+    const BASE_API = 'https://api.fcs-monitor.net/';
 
     /*  Variables */
 
@@ -277,7 +277,7 @@ $(document).ready(function() {
 
         } catch (err) {}
 
-        $('.countDataUser .userName').text(fullName)
+        //$('.countDataUser .userName').text(fullName)
         $('.countDataUser .userID').text('ID de Seguimiento: ' + idUser)
         if (idEmployee != null) {
             $('.employementID').text('No. de empleado: ' + idEmployee)
@@ -1254,16 +1254,24 @@ $(document).ready(function() {
     }
 
     var validateUpdatePass = function() {
+        let valInputAnt = String($('[name="antPassword"]').val())
         let valInputUp = String($('[name="updatePassword"]').val())
         let valInputRec = String($('[name="confirmUpPass"]').val())
         let token = getStorage64('getTokenR')
-
-        let upadtePass = {
+        var dataUserCont = getStorage64('dataUserCont')
+        var emailUser = dataUserCont.email
+        let updatePass = {
+            "password_old": valInputAnt,
             "password": valInputRec,
-            "token": token
+            // "token": token,
+            "email": emailUser
         }
 
-        if (valInputUp === '' || valInputUp === undefined || valInputUp === null) {
+        if (valInputAnt === '' || valInputAnt === undefined || valInputAnt === null) {
+            $('[name="antPassword"]').addClass('error')
+            $('[name="antPassword"] + .errorMessage').text('Campo vacio')
+            upErrorMessage()
+        } else if (valInputUp === '' || valInputUp === undefined || valInputUp === null) {
             $('[name="updatePassword"]').addClass('error')
             $('[name="updatePassword"] + .errorMessage').text('Campo vacio')
             upErrorMessage()
@@ -1277,10 +1285,10 @@ $(document).ready(function() {
             upErrorMessage()
         } else if (valInputRec !== valInputUp) {
             $('[name="confirmUpPass"]').addClass('error');
-            $('[name="confirmUpPass"] + .errorMessage').text('Las contraseñas no son iguales');
+            $('[name="confirmUpPass"] + .errorMessage').text('Las contraseñas no coinciden');
             upErrorMessage()
         } else {
-            sendUpdatePass(upadtePass)
+            sendUpdatePass(updatePass)
         }
     }
 
@@ -1931,159 +1939,159 @@ $(document).ready(function() {
         }
         let dataAnswers =
             '[\n\
-				{\n\
-				  "question_id": 1,\n\
-				  "answer": {\n\
-					"type": "SELECT",\n\
-					"answer": "' + valInputvivienda + '",\n\
-					"required": "true"\n\
-				  }\n\
-				},\n\
-				{\n\
-				  "question_id": 2,\n\
-				  "answer": {\n\
-					"type": "SELECT",\n\
-					"answer": "' + valInputPosible + '",\n\
-					"required": "true"\n\
-				  }\n\
-				},\n\
-				{\n\
-					"question_id": 3,\n\
-					"answer": {\n\
-					  "type": "OPEN",\n\
-					  "answer": "' + valInputprofesionReg + '",\n\
-					  "required": "' + valrequiredprofesion + '"\n\
-					}\n\
-				  },\n\
-				{\n\
-				  "question_id": 4,\n\
-				  "answer": {\n\
-					"type": "SELECT",\n\
-					"answer": "' + valInputSospechoso + '",\n\
-					"required": "true"\n\
-				  }\n\
-				},\n\
-				{\n\
-				  "question_id": 5,\n\
-				  "answer": {\n\
-					"type": "SELECT",\n\
-					"answer": "' + valInputLavado + '",\n\
-					"required": "true"\n\
-				  }\n\
-				},\n\
-				{\n\
-					"question_id": 6,\n\
-					"answer": {\n\
-					  "type": "SELECT",\n\
-					  "answer": "' + valInputFamilarLavado + '",\n\
-					  "required": "true"\n\
-					}\n\
-				  },\n\
-				  {\n\
-					"question_id": 7,\n\
-					"answer": {\n\
-					  "type": "SELECT",\n\
-					  "answer": "' + valInputInstalaciones + '",\n\
-					  "required": "true"\n\
-					}\n\
-				  },\n\
-				  {\n\
-					"question_id": 8,\n\
-					"answer": {\n\
-					  "type": "SELECT",\n\
-					  "answer": "' + valInputInstalacionesInner + '",\n\
-					  "required": "' + valrequiredinstalaciones + '"\n\
-					}\n\
-				  },\n\
-				  {\n\
-					"question_id": 9,\n\
-					"answer": {\n\
-					  "type": "SELECT",\n\
-					  "answer": "' + valInputInstalacionesCliente + '",\n\
-					  "required": "' + valrequiredinstalacionesC + '"\n\
-					}\n\
-				  },\n\
-				  {\n\
-					"question_id": 10,\n\
-					"answer": {\n\
-					  "type": "SELECT",\n\
-					  "answer": "' + valInputInstaReg + '",\n\
-					  "required": "' + valrequiredinstareg + '"\n\
-					}\n\
-				  },\n\
-				  {\n\
-					"question_id": 11,\n\
-					"answer": {\n\
-					  "type": "SELECT",\n\
-					  "answer": "' + valInputTemporalSite + '",\n\
-					  "required": "true"\n\
-					}\n\
-				  },\n\
-				  {\n\
-					"question_id": 12,\n\
-					"answer": {\n\
-					  "type": "OPEN",\n\
-					  "answer": "' + valInputcodigoPostalReg + '",\n\
-					  "required": "true"\n\
-					}\n\
-				  },\n\
-				  {\n\
-					"question_id": 13,\n\
-					"answer": {\n\
-					  "type": "SELECT",\n\
-					  "answer": "' + valInputActividadLaboral + '",\n\
-					  "required": "true"\n\
-					}\n\
-				  },\n\
-				  {\n\
-					"question_id": 14,\n\
-					"answer": {\n\
-					  "type": "SELECT",\n\
-					  "answer": "' + valInputSupervisor + '",\n\
-					  "required": "true"\n\
-					}\n\
-				  },\n\
-				  {\n\
-					"question_id": 15,\n\
-					"answer": {\n\
-					  "type": "OPEN",\n\
-					  "answer": "' + valInputSupervisoSrReg + '",\n\
-					  "required": "' + valrequiredsupervisor + '"\n\
-					}\n\
-				  },\n\
-				  {\n\
-					"question_id": 16,\n\
-					"answer": {\n\
-					  "type": "SELECT",\n\
-					  "answer": "' + valInputTransporte + '",\n\
-					  "required": "true"\n\
-					}\n\
-				  },\n\
-				  {\n\
-					"question_id": 17,\n\
-					"answer": {\n\
-					  "type": "SELECT",\n\
-					  "answer": "' + valInputVehiculoComp + '",\n\
-					  "required": "' + valrequiredvehiculo + '"\n\
-					}\n\
-				  },\n\
-				  {\n\
-					"question_id": 18,\n\
-					"answer": {\n\
-					  "type": "MULTISELECT",\n\
-					  "answer": "' + valInputtransporteLista + ',' + valInputtransporteListb + ',' + valInputtransporteListc + ',' + valInputtransporteListd + ',' + valInputtransporteListe + '",\n\
-					  "required": "' + valrequiredtransporteL + '"\n\
-					}\n\
-				  },\n\
-				  {\n\
-					"question_id": 19,\n\
-					"answer": {\n\
-					  "type": "SELECT",\n\
-					  "answer": "' + valInputTransporteTiempo + '",\n\
-					  "required": "true"\n\
-					}\n\
-				  }\n\
-			  ]';
+					{\n\
+					  "question_id": 1,\n\
+					  "answer": {\n\
+						"type": "SELECT",\n\
+						"answer": "' + valInputvivienda + '",\n\
+						"required": "true"\n\
+					  }\n\
+					},\n\
+					{\n\
+					  "question_id": 2,\n\
+					  "answer": {\n\
+						"type": "SELECT",\n\
+						"answer": "' + valInputPosible + '",\n\
+						"required": "true"\n\
+					  }\n\
+					},\n\
+					{\n\
+						"question_id": 3,\n\
+						"answer": {\n\
+						  "type": "OPEN",\n\
+						  "answer": "' + valInputprofesionReg + '",\n\
+						  "required": "' + valrequiredprofesion + '"\n\
+						}\n\
+					  },\n\
+					{\n\
+					  "question_id": 4,\n\
+					  "answer": {\n\
+						"type": "SELECT",\n\
+						"answer": "' + valInputSospechoso + '",\n\
+						"required": "true"\n\
+					  }\n\
+					},\n\
+					{\n\
+					  "question_id": 5,\n\
+					  "answer": {\n\
+						"type": "SELECT",\n\
+						"answer": "' + valInputLavado + '",\n\
+						"required": "true"\n\
+					  }\n\
+					},\n\
+					{\n\
+						"question_id": 6,\n\
+						"answer": {\n\
+						  "type": "SELECT",\n\
+						  "answer": "' + valInputFamilarLavado + '",\n\
+						  "required": "true"\n\
+						}\n\
+					  },\n\
+					  {\n\
+						"question_id": 7,\n\
+						"answer": {\n\
+						  "type": "SELECT",\n\
+						  "answer": "' + valInputInstalaciones + '",\n\
+						  "required": "true"\n\
+						}\n\
+					  },\n\
+					  {\n\
+						"question_id": 8,\n\
+						"answer": {\n\
+						  "type": "SELECT",\n\
+						  "answer": "' + valInputInstalacionesInner + '",\n\
+						  "required": "' + valrequiredinstalaciones + '"\n\
+						}\n\
+					  },\n\
+					  {\n\
+						"question_id": 9,\n\
+						"answer": {\n\
+						  "type": "SELECT",\n\
+						  "answer": "' + valInputInstalacionesCliente + '",\n\
+						  "required": "' + valrequiredinstalacionesC + '"\n\
+						}\n\
+					  },\n\
+					  {\n\
+						"question_id": 10,\n\
+						"answer": {\n\
+						  "type": "SELECT",\n\
+						  "answer": "' + valInputInstaReg + '",\n\
+						  "required": "' + valrequiredinstareg + '"\n\
+						}\n\
+					  },\n\
+					  {\n\
+						"question_id": 11,\n\
+						"answer": {\n\
+						  "type": "SELECT",\n\
+						  "answer": "' + valInputTemporalSite + '",\n\
+						  "required": "true"\n\
+						}\n\
+					  },\n\
+					  {\n\
+						"question_id": 12,\n\
+						"answer": {\n\
+						  "type": "OPEN",\n\
+						  "answer": "' + valInputcodigoPostalReg + '",\n\
+						  "required": "true"\n\
+						}\n\
+					  },\n\
+					  {\n\
+						"question_id": 13,\n\
+						"answer": {\n\
+						  "type": "SELECT",\n\
+						  "answer": "' + valInputActividadLaboral + '",\n\
+						  "required": "true"\n\
+						}\n\
+					  },\n\
+					  {\n\
+						"question_id": 14,\n\
+						"answer": {\n\
+						  "type": "SELECT",\n\
+						  "answer": "' + valInputSupervisor + '",\n\
+						  "required": "true"\n\
+						}\n\
+					  },\n\
+					  {\n\
+						"question_id": 15,\n\
+						"answer": {\n\
+						  "type": "OPEN",\n\
+						  "answer": "' + valInputSupervisoSrReg + '",\n\
+						  "required": "' + valrequiredsupervisor + '"\n\
+						}\n\
+					  },\n\
+					  {\n\
+						"question_id": 16,\n\
+						"answer": {\n\
+						  "type": "SELECT",\n\
+						  "answer": "' + valInputTransporte + '",\n\
+						  "required": "true"\n\
+						}\n\
+					  },\n\
+					  {\n\
+						"question_id": 17,\n\
+						"answer": {\n\
+						  "type": "SELECT",\n\
+						  "answer": "' + valInputVehiculoComp + '",\n\
+						  "required": "' + valrequiredvehiculo + '"\n\
+						}\n\
+					  },\n\
+					  {\n\
+						"question_id": 18,\n\
+						"answer": {\n\
+						  "type": "MULTISELECT",\n\
+						  "answer": "' + valInputtransporteLista + ',' + valInputtransporteListb + ',' + valInputtransporteListc + ',' + valInputtransporteListd + ',' + valInputtransporteListe + '",\n\
+						  "required": "' + valrequiredtransporteL + '"\n\
+						}\n\
+					  },\n\
+					  {\n\
+						"question_id": 19,\n\
+						"answer": {\n\
+						  "type": "SELECT",\n\
+						  "answer": "' + valInputTransporteTiempo + '",\n\
+						  "required": "true"\n\
+						}\n\
+					  }\n\
+				  ]';
         console.log("answers", dataAnswers)
         sendValuesPoll(dataAnswers)
     }
@@ -2094,7 +2102,7 @@ $(document).ready(function() {
         let familiar_ID = getStorage64('userRedisParentT')
             //console.log('familiar token: '+familiar_ID)
         let valInputToken = $('[name="tokenReg"]').val()
-        let valInputId = $('[name="idEmpleadoReg"]').val()
+
         let valInputEmail = $('[name="emailReg"]').val()
         let valInputPass = $('[name="passwordReg"]').val()
         let valInputName = $('[name="nombreReg"]').val()
@@ -2189,7 +2197,7 @@ $(document).ready(function() {
                     "gender": valInputGender,
                     "birthdate": valInputBirthday,
                     "type": "1",
-                    "employ_id": valInputId,
+                    "employ_id": valInputEmp,
                     "password": valInputPass,
                     "source": "3",
                     "tokenGroup": null
@@ -2208,7 +2216,7 @@ $(document).ready(function() {
         let familiar_ID = getStorage64('userRedisParentT')
             //console.log('familiar token: '+familiar_ID)
         let valInputToken = $('[name="tokenReg"]').val()
-        let valInputId = $('[name="idEmpleadoReg"]').val()
+        let valInputEmp = $('[name="idEmpleadoReg"]').val()
         let valInputEmail = $('[name="emailReg"]').val()
         let valInputPass = $('[name="passwordReg"]').val()
         let valInputName = $('[name="nombreReg"]').val()
@@ -2231,6 +2239,9 @@ $(document).ready(function() {
         } else if (!validateEmail(valInputEmail)) {
             errorInputNotify('emailReg', warningMessages[3])
             toast(warningMessages[3])
+        } else if (valInputEmp === '' || valInputEmp === undefined || valInputEmp === null) {
+            errorInputNotify('idEmpleadoReg', warningMessages[0])
+            toast(warningMessages[0])
         } else if (valInputPass === '' || valInputPass === undefined || valInputPass === null) {
             errorInputNotify('passwordReg', warningMessages[0])
             toast(warningMessages[0])
@@ -2306,7 +2317,7 @@ $(document).ready(function() {
                     "gender": valInputGender,
                     "birthdate": valInputBirthday,
                     "type": "1",
-                    "employ_id": valInputId,
+                    "employ_id": valInputEmp,
                     "password": valInputPass,
                     "source": "3",
                     "tokenGroup": valInputToken
@@ -2859,7 +2870,9 @@ $(document).ready(function() {
     }
     var sendNewNormal = function() {
         redirectUrl('newNormal')
-
+    }
+    var sendUpdatePassword = function() {
+        redirectUrl('updatePassword')
     }
 
     var sendEvalueFamily = function(data, idUser) {
@@ -2983,6 +2996,7 @@ $(document).ready(function() {
             i++
         }
     }
+
     var addDiseases = function(value) {
         var diseases = value
         let i = 0
@@ -2993,6 +3007,53 @@ $(document).ready(function() {
         }
         $('.forTwo.arrayDiseases').append('<div class=\"contCheckRadio checkbox\"><input type=\"checkbox\" name=\"ninguna\" id=\"ninguna\" value=\"0\"><label for=\"ninguna\">Ninguna<\/label><\/div>')
     }
+
+    $(".openModal").click(function() {
+        var actionToRisk = getStorage64('actionToRisk')
+        var dataCompanyCont = getStorage64('dataCompanyCont')
+        var colorRisk = actionToRisk.color
+        var idEmployee = dataCompanyCont.empresa.id
+        axiosListActions(idEmployee, colorRisk)
+    });
+
+    var addactionsToTake = function(value) {
+        var actionsToTakeList = value
+
+        let i = 0
+        console.log("acciones para riesgo ", actionsToTakeList.data)
+        var actiontoJson = actionsToTakeList.data
+            // Obteniendo todas las claves del JSON
+        $('article.resultInfo > ul > li').remove()
+        for (var clave in actiontoJson) {
+            // Controlando que json realmente tenga esa propiedad
+            if (actiontoJson.hasOwnProperty(clave)) {
+                // Mostrando en pantalla la clave junto a su valor
+                // console.log("La clave es " + clave + " y el valor es " + actiontoJson[clave]);
+                if (clave == "accion_1" || clave == "accion_2" || clave == "accion_3" || clave == "accion_4" || clave == "accion_5") {
+                    if (actiontoJson[clave] !== null)
+                        $('ul.actions').append('<li>' + actiontoJson[clave] + '</li> ')
+                }
+                if (clave == "texto_telefono_1") {
+                    if (actiontoJson[clave] !== null)
+                        $('p.actionsPhone1').replaceWith('<p class="actionsPhone1">' + actiontoJson[clave] + '</p> ')
+                }
+                if (clave == "texto_telefono_2") {
+                    if (actiontoJson[clave] !== null)
+                        $('p.actionsPhone2').replaceWith('<p class="actionsPhone2">' + actiontoJson[clave] + '</p> ')
+                }
+                if (clave == "texto_correo_1") {
+                    if (actiontoJson[clave] !== null)
+                        $('p.actionsEmail1').replaceWith('<p class="actionsEmail1">' + actiontoJson[clave] + '</p> ')
+                }
+                if (clave == "texto_correo_2") {
+                    if (actiontoJson[clave] !== null)
+                        $('p.actionsEmail2').replaceWith('<p class="actionsEmail2">' + actiontoJson[clave] + '</p> ')
+                }
+            }
+            //
+        }
+    }
+
     var addSymptoms = function(value) {
         var symptoms = value
         let i = 0
@@ -3117,6 +3178,51 @@ $(document).ready(function() {
 
     /*  Peticiones AXIOS  GET*/
     /* Add Data List */
+    var axiosListActions = function(idEmployee, colorRisk) {
+        console.log("coloooorr" , colorRisk)
+        const config = {
+            metodo: 'get',
+            url: BASE_API + 'covid-19/v2/actionsToTake/' + idEmployee + "/" + colorRisk,
+            cred: false,
+            head: {
+                'Content-Type': 'application/json'
+            }
+        }
+
+        axios({
+                method: config.metodo,
+                url: config.url,
+                withCredentials: config.cred,
+                headers: config.head
+            })
+            .then(function(res) {
+                if (res.status === 200) {
+                    var actionsToTake = (res.data)
+                    console.log("acciones--> ", actionsToTake)
+
+                    addactionsToTake(actionsToTake)
+
+                }
+            })
+            .catch(function(error) {
+                if (error.message == 'Network Error') {
+                    addLoader('false')
+                    toast('Error de conexión')
+                } else if (error.request) {
+                    addLoader('false')
+                    console.log(error.request.responseText)
+                }
+                if (error.response.status === 404) {
+                    console.error(error.response);
+                    request404()
+                } else if (error.response.status === 500) {
+                    request500()
+                } else {
+                    console.error(error.response.status);
+                    console.error(error.response);
+                }
+            });
+    }
     var axiosListDiseases = function() {
         const config = {
             metodo: 'get',
@@ -3901,29 +4007,29 @@ $(document).ready(function() {
     /* var axiosCatDivision = function(){} */
     var axiosCode = function() {
         /*const config = {
-        	metodo: 'get',
-        	url: 'https://api.myjson.com/bins/oxp16',
-        	cred: false,
-        	head: {
-        		'Content-Type': 'application/json'
-        	}
-        }
-
-        axios({
-        	method: config.metodo,
-        	url: config.url,
-        	withCredentials: config.cred,
-        	headers: config.head
-        })
-        .then(function (res){
-        	if(res.status === 200) {
-        		setCodeEnter(res.data.data.codeEnter)
-        		setCodeEnter('Carso123.')
-        	}
-        })
-        .catch(function (error) {
-        	console.log('error: '+error);
-        });*/
+				metodo: 'get',
+				url: 'https://api.myjson.com/bins/oxp16',
+				cred: false,
+				head: {
+					'Content-Type': 'application/json'
+				}
+			}
+	
+			axios({
+				method: config.metodo,
+				url: config.url,
+				withCredentials: config.cred,
+				headers: config.head
+			})
+			.then(function (res){
+				if(res.status === 200) {
+					setCodeEnter(res.data.data.codeEnter)
+					setCodeEnter('Carso123.')
+				}
+			})
+			.catch(function (error) {
+				console.log('error: '+error);
+			});*/
 
         setCodeEnter('carso123')
     }
@@ -4892,7 +4998,11 @@ $(document).ready(function() {
                     $('.passUpdate .card.passwordUpdate').remove()
                     $('.passUpdate .textInfo').remove()
                     $('.passUpdate .card.thanksUpdatePass').removeClass('hidden')
-                    $('.thanksUpdatePass .btn.primario').on('click', returnToHome)
+                        // $('.thanksUpdatePass .btn.primario').on('click', returnToHome)
+                    setTimeout(() => {
+                        redirectUrl('userProfile')
+                    }, 800);
+
                     addLoader('false')
                 }
             })
@@ -4906,9 +5016,14 @@ $(document).ready(function() {
                 }
                 console.log(error)
                 addLoader('false')
+                $('[name="antPassword"]').addClass('error')
+                $('[name="antPassword"] + .errorMessage').text('La contraseña anterior no coincide')
+                upErrorMessage()
                 toast('Por favor intentalo de nuevo')
             });
     }
+
+
     var axiosActivate = function() {
         var dataActivate = getStorage64('userRedisT')
         const config = {
@@ -5142,6 +5257,7 @@ $(document).ready(function() {
                         user.temperature = parseFloat(data.data.temperatura)
                         var sumRisk = calculateSumRisks(user)
                         assignRiskGroupAllocation(sumRisk)
+                        addLoader('false')
                     })
             })
     }
@@ -5216,7 +5332,16 @@ $(document).ready(function() {
                     "score": element.points
                 })
                 .then(function(data) {
-                    console.log(data)
+                    var dataAction = JSON.parse(JSON.stringify(data))
+                    // console.log("setea riesgos", dataAction)
+                    setStorage64('actionToRisk', dataAction.data)
+
+                    console.log("actiontorisk-->", dataAction.data)
+                    var dataCompanyCont = getStorage64('dataCompanyCont')
+                    var idEmployee = dataCompanyCont.empresa.id
+                    axiosListActions(idEmployee, dataAction.data.color)
+
+                    
                 })
         }
 
@@ -5224,11 +5349,11 @@ $(document).ready(function() {
         $(".label_basal").html(element.text);
         $(".label_basal").addClass("active");
 
-        if (company !== 'null' || company !== null || company !== undefined || company !== '') {
+        if (company !== "null") {
             $(".resultWrapp").addClass("hidden");
             $(".resultWrapp." + element.class).data('risk', element.points).attr('data-risk', element.points).removeClass("hidden");
-            $(".numberPhone").text(telefonoContact);
-            $(".section.sectionFooter > a").text(correoContact);
+            $(".numberPhone").text(empresaTelefono);
+            $(".section.sectionFooter > a").text(empresaCorreo);
         } else {
             $(".resultWrapp").addClass("hidden");
             $(".resultWrapp." + element.class).data('risk', element.points).attr('data-risk', element.points).removeClass("hidden");
@@ -5620,7 +5745,28 @@ $(document).ready(function() {
             let date = value.split(' ')[0].split('-')
             return `${date[2]} de ${months[parseInt(date[1]) - 1]} de ${date[0]}`
         } else {
+            // value.setHours(value.getHours() +6);
+            // alert((value.getHours()<10)?"0":"")+value.getHours()
+            let date = value.split(' ')[0]
             let time = value.split(' ')[1]
+            year = date.split('-')[0]
+            month = date.split('-')[1]
+                // alert(month)
+            day = date.split('-')[2]
+            hour = time.split(':')[0]
+            min = time.split(':')[1]
+            sec = time.split(':')[2]
+                // var reserv = new Date(year,month,day,hour,min,sec)
+                // console.log(reserv)
+                // hourUTC = reserv.getUTCHours()
+                // hourUTC = ("0" + hourUTC).slice(-2);
+                // minuteUTC = reserv.getUTCMinutes()
+                // minuteUTC = ("0" + minuteUTC).slice(-2);
+                // secondsUTC = reserv.getUTCSeconds()
+                // secondsUTC = ("0" + secondsUTC).slice(-2);
+            time = hour + ":" + min + ":" + sec
+
+
             return time;
         }
     }
@@ -5816,23 +5962,9 @@ $(document).ready(function() {
     $('.activitiesRegitrer').on('click', sendActivitiesRegitrer)
     $('.clinicalProfile').on('click', sendClinicalProfile)
     $('.registerFamily').on('click', sendRegisterFamily)
-
-    // Nueva normalidad
+    $('.updatePassword').on('click', sendUpdatePassword)
+        // Nueva normalidad
     $('.newNormal').on('click', sendNewNormal)
-
-    // $('input:radio[name="personasVivir"]').change(
-    // 	function(){
-    // 		if ($(this).is(':checked') && $(this).val() == 'valueShow2') {
-    // 			// append goes here
-    // 			$( ".formHide" ).show()
-    // 			//alert("checked")
-    // 		}
-    // 		if ($(this).is(':checked') && $(this).val() == 'valueShow1') {
-    // 			// append goes here
-    // 			$( ".formHide" ).hide()
-    // 			//alert("checked no")
-    // 		}
-    // 	});
 
     $('input:radio[name="posibles"]').change(
         function() {
@@ -5965,8 +6097,7 @@ $(document).ready(function() {
             }
 
         });
-    /* Resultados */
-    thanYouResult()
+
 
     /* Locaciones */
     if (window.location.pathname.indexOf('/index') !== -1) {
@@ -6064,6 +6195,7 @@ $(document).ready(function() {
             if (tipo == 1) {
                 $('.card.registerFamily').show();
                 $('.card.newNormal').show();
+                $('.card.employData').show();
                 var empresaLoweCase = empresa.toLowerCase()
                 $(document.body).addClass("skin--" + empresaLoweCase);
                 //console.log("tipo", tipo)				
@@ -6074,6 +6206,7 @@ $(document).ready(function() {
             } else {
                 $('.card.registerFamily').hide();
                 $('.card.newNormal').hide();
+                $('.card.employData').hide();
             }
             //console.log("mydata", tipo)
         }, 1700);
@@ -6088,13 +6221,16 @@ $(document).ready(function() {
 
         var dataUserConttipo = getStorage64('dataUserCont')
         var tipo = dataUserConttipo.tipo
+            // $('.userName').text(' ¡Hola ' + name + ' !')
 
         if (tipo == 1) {
             $('.card.registerFamily').show();
             $('.card.newNormal').show();
+            $('.card.employData').show();
         } else {
             $('.card.registerFamily').hide();
             $('.card.newNormal').hide();
+            $('.card.employData').hide();
         }
 
 
@@ -6144,11 +6280,10 @@ $(document).ready(function() {
         }
     } else if (window.location.pathname.indexOf('/thankYouPage') !== -1) {
         var loginIn = getStorage64('userLoginSession')
+        var dataCompanyCont = getStorage64('dataCompanyCont')
+
+        var appU = getStorage64('userAppU')
         var name = getStorage64('userAppN').split(' ')
-
-
-        // deleteStorage64('userRedisParentT')
-        // deleteStorage64('liveInHouse')
         var firstName = name[0]
         var userRegisterRelatives = getStorage64('userRegisterRelatives')
         if (userRegisterRelatives == "true") {
@@ -6156,15 +6291,24 @@ $(document).ready(function() {
         } else if (loginIn !== "true") {
             redirectUrl('home')
         } else {
+            
+            var actionToRisk = getStorage64('actionToRisk')
+            var colorRisk = actionToRisk.color
             var company = getStorage64('dataCompanyCont')
-            console.log("compañia", company)
+            var idEmployee = dataCompanyCont.empresa.id
+            // console.log("compañia", company)
+            axiosListActions(idEmployee, colorRisk)
+
+
             if (company !== "null") {
-                var telefonoContact = company.grupo.telefono
-                var correoContact = company.grupo.correo
-                $(".numberPhone").text(telefonoContact);
-                $(".sectionFooter > a").text(correoContact);
-                $(".sectionFooter > a").attr("href", "mailto:" + correoContact).text(correoContact)
+                var dataCompanyCont = getStorage64('dataCompanyCont')
+                var empresaTelefono = dataCompanyCont.empresa.telefono
+                var empresaCorreo = dataCompanyCont.empresa.correo
+                $(".numberPhone").text(empresaTelefono);
+                $(".sectionFooter > a").text(empresaCorreo);
+                $(".sectionFooter > a").attr("href", "mailto:" + empresaCorreo).text(empresaCorreo);
                 $("#policies > a").text("Politicas de privacidad");
+            
             }
 
             axiosListDiseases()
@@ -6231,6 +6375,7 @@ $(document).ready(function() {
         try {
             var keyToken = getParams()['key']
             setTokenR = setStorage64('getTokenR', keyToken)
+            emailUpPass = getStorage64('getTokenR', keyToken)
         } catch (e) {
             console.log('no hay parametros GET');
         }
@@ -6263,6 +6408,11 @@ $(document).ready(function() {
         var name = getStorage64('userAppN').split(' ')
         var firstName = name[0]
         $('.userProfileNavBar').text(firstName)
+    } else if (window.location.pathname.indexOf('/userProfile') !== -1) { // Nueva linea
+        var loginIn = getStorage64('userLoginSession')
+        var name = getStorage64('userAppN').split(' ')
+        var firstName = name[0]
+        $('.userName').text(' ¡Hola ' + name + ' !')
     }
 
 
@@ -6332,5 +6482,6 @@ $(document).ready(function() {
     var fillSecondary = function(value) {
         axiosCatCompany2(value)
     }
-
+    /* Resultados */
+    thanYouResult()
 });
