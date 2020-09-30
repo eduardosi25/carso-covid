@@ -188,11 +188,57 @@ $(document).ready(function() {
     var modalCuestionario = function() {
         $('.modalCuestionaro').fadeIn()
     }
-
+    var modalCuestionarioDin = function() {
+        $('.modalCuestionarioDin').fadeIn()
+       
+    }
 
 
     /*:: Vistas modal ::*/
     // Next de vista
+    var changeViewTest = function(e) {
+        console.log('click')
+        e.preventDefault()
+        $(".modalItem0").removeClass("active")
+        $(".modalItem1").addClass("active")
+        $('.contentModal').animate({ scrollTop: 0 }, 200)
+    }
+    var changeView1 = function(e) {
+        console.log('click first test')
+        $('div.stepFollow > p:nth-child(1)').removeClass('active');
+        $('div.stepFollow > p:nth-child(2)').addClass('active');
+        e.preventDefault()
+        $(".modalItem1").removeClass("active")
+        $(".modalItem2").addClass("active")
+        $('.contentModal').animate({ scrollTop: 0 }, 200)
+    }
+    var changeView2 = function(e) {
+        console.log('click second test')
+        $('div.stepFollow > p:nth-child(2)').removeClass('active');
+        $('div.stepFollow > p:nth-child(3)').addClass('active');
+        e.preventDefault()
+        $(".modalItem2").removeClass("active")
+        $(".modalItem3").addClass("active")
+        $('.contentModal').animate({ scrollTop: 0 }, 200)
+    }
+    var changeView3 = function(e) {
+        console.log('click third test')
+        $('div.stepFollow > p:nth-child(3)').removeClass('active');
+        $('div.stepFollow > p:nth-child(4)').addClass('active');
+        e.preventDefault()
+        $(".modalItem3").removeClass("active")
+        $(".modalItem4").addClass("active")
+        $('.contentModal').animate({ scrollTop: 0 }, 200)
+    }
+    var changeView4 = function(e) {
+        console.log('click four test')
+        $('div.stepFollow > p:nth-child(4)').removeClass('active');
+        $('div.stepFollow > p:nth-child(5)').addClass('active');
+        e.preventDefault()
+        $(".modalItem4").removeClass("active")
+        $(".modalItem5").addClass("active")
+        $('.contentModal').animate({ scrollTop: 0 }, 200)
+    }
     var changeView = function(e) {
         console.log('click')
         e.preventDefault()
@@ -200,6 +246,7 @@ $(document).ready(function() {
         $(".modalItemVivienda").addClass("active")
         $('.contentModal').animate({ scrollTop: 0 }, 200)
     }
+
     var changeViewVivienda = function() {
         //console.log('click vivienda')
         //e.preventDefault()
@@ -3481,6 +3528,105 @@ $(document).ready(function() {
                 }
             });
     }
+    var axiosListPollMask = function() {
+        var appT = getStorage64('userAppT')
+            // var appU = getStorage64('userAppU')
+        var dataUserCont = getStorage64('dataUserCont')
+        var idUser = dataUserCont.id_usuario
+        const config = {
+            metodo: 'get',
+            url: BASE_API + 'covid-19/v2/poll/uso-de-cubreboca/question/' + idUser,
+            //url: 'http://127.0.0.1:5500/cuestionario.json',
+            cred: false,
+            head: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + appT
+            }
+        }
+
+        axios({
+                method: config.metodo,
+                url: config.url,
+                withCredentials: config.cred,
+                headers: config.head
+            })
+            .then(function(res) {
+                if (res.status === 200) {
+                    addLoader('false')
+                    // var poll = res.data.poll
+                    // var dataCompanyCont = getStorage64('dataCompanyCont')
+                    // let companyId = dataCompanyCont.empresa.id
+                    //     //console.log("id empresa", companyId)
+                    // if (res.data.message !== undefined || res.data.message !== '' || res.data.message !== null ||
+                    //     companyId !== 28 || companyId !== 57 || companyId !== 58 || companyId !== 59 || companyId !== 60 ||
+                    //     companyId !== 61) {
+                    //     //console.log("pruebas gerry con data" , res.data)
+                    modalCuestionarioDin()
+                    console.log("pollMask", res.data)
+                    // }
+                    $('p#titlePrime').text(res.data.poll.title)
+                    $('p#pollDescription').text(res.data.poll.description)
+                    for (var clave in res.data.sections){
+                        // Controlando que json realmente tenga esa propiedad
+                        if (res.data.sections.hasOwnProperty(clave)) {
+                          // Mostrando en pantalla la clave junto a su valor
+                            claveQuery =  parseInt(clave)+1;
+                            // console.log("La clave es " + claveQuery + " y el valor es " + res.data.sections[clave].title);
+                            $('div.stepFollow > p:nth-child('+ claveQuery +')').text(res.data.sections[clave].title)
+                            for (var numQuestion in res.data.sections[clave].questions){
+                                // if (res.data.sections.hasOwnProperty(numQuestion)) {
+                                    questionQuery =  parseInt(numQuestion)+1;
+                                    console.log("La clave es " + questionQuery + " y el valor es " + res.data.sections[clave].questions[numQuestion].question);
+                                    $('p#'+ questionQuery +'.h6').text(res.data.sections[clave].questions[numQuestion].question)
+                                // }
+                            }    
+                        
+                        
+                        }
+                    }
+                    var sections = res.data.sections
+                    // var vivienda = res.data.sections[0].questions
+                    // var trabajo = res.data.sections[1].questions
+                    // var movilidad = res.data.sections[2].questions
+                    // var lengthQuestions = res.data.sections[2].questions
+                    // var movilidad = res.data.sections[2].questions
+                    // var movilidad = res.data.sections[2].questions
+
+                    // console.log("vivienda", vivienda)
+                    // console.log("trabajo", trabajo)
+                    // console.log("movilidad", movilidad)
+                    // setStorage64('poll', poll)
+                    // setStorage64('vivienda', vivienda)
+                    // setStorage64('trabajo', trabajo)
+                    // localStorage.setItem('movilidad', JSON.stringify(movilidad))
+                    // getPollVariables()
+
+
+
+                }
+            })
+            .catch(function(error) {
+                if (error.message == 'Network Error') {
+                    addLoader('false')
+                    toast('Error de conexión')
+                } else if (error.request) {
+                    addLoader('false')
+                    console.log(error.request.responseText)
+                }
+                if (error.response.status === 404) {
+                    addLoader('false')
+                    console.error(error.response);
+                    request404()
+                } else if (error.response.status === 500) {
+                    addLoader('false')
+                    request500()
+                } else {
+                    addLoader('false')
+                    console.error(error.response.status);
+                    console.error(error.response);
+                }
+            });
+    }
 
     var axiosListPoll = function() {
         var appT = getStorage64('userAppT')
@@ -5924,10 +6070,16 @@ $(document).ready(function() {
     $('.registryModule .middleIMCForm').on('click', validateRegistryFormMiddleIMC)
     $('.registryModule .lastForm').on('click', validateRegistryFormLast)
 
+    $('.iniciarNextTest').on('click', changeViewTest)
     $('.iniciarNext').on('click', changeView)
     $('.trabajoNext').on('click', validateTrabajo)
     $('.movilidadNext').on('click', validateMovilidad)
     $('.viviendaNext').on('click', validateVivienda)
+    $('div.stepFollow > p:nth-child(1)').addClass('active');
+    $('.1Next').on('click', changeView1)
+    $('.2Next').on('click', changeView2)
+    $('.3Next').on('click', changeView3)
+    $('.4Next').on('click', changeView4)
     $('.nextEnd').on('click', endView)
 
     $('.trabajoBack').on('click', prevViewTrabajo)
@@ -6201,8 +6353,8 @@ $(document).ready(function() {
                 //console.log("tipo", tipo)				
                 //if (employeeUser !== 'CIE'){
                 //- CIE - LS- MINISO   - ISHOP- CLARO COLOMBIA - HITSS COLOMBIA - ASPEL
-
-                axiosListPoll()
+                axiosListPollMask();
+                // axiosListPoll()
             } else {
                 $('.card.registerFamily').hide();
                 $('.card.newNormal').hide();
